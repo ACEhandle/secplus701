@@ -17,15 +17,23 @@ class PracticeTests:
         self.current_questions = questions[:num_questions]
         return self.current_questions
 
-    def load_full_exam(self, exam_index=0, num_questions=100):
-        exams = self.data.get('full_exams', [])
-        if 0 <= exam_index < len(exams):
-            questions = exams[exam_index]['questions']
+    def load_full_exam(self):
+        # Domain weights for 45 questions (rounded to nearest integer)
+        domain_weights = {
+            'General Security Concepts': 5,   # 12% of 45 ≈ 5
+            'Threats, Vulnerabilities, and Mitigations': 10,  # 22% of 45 ≈ 10
+            'Security Architecture': 8,      # 18% of 45 ≈ 8
+            'Security Operations': 13,       # 28% of 45 ≈ 13
+            'Security Program Management and Oversight': 9   # 20% of 45 ≈ 9
+        }
+        selected_questions = []
+        for domain, count in domain_weights.items():
+            questions = self.data['modules'].get(domain, [])
             random.shuffle(questions)
-            self.current_questions = questions[:num_questions]
-            return self.current_questions
-        self.current_questions = []
-        return []
+            selected_questions.extend(questions[:count])
+        random.shuffle(selected_questions)
+        self.current_questions = selected_questions
+        return self.current_questions
 
     def get_available_modules(self):
         return list(self.data['modules'].keys())
