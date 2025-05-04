@@ -141,7 +141,7 @@ class PracticeTestView(ctk.CTkFrame):
         if self.current_question_index not in self.passed_questions:
             self.passed_questions.append(self.current_question_index)
         self.update_progress_bar()
-        self.next_passed_question()
+        self.next_question()
 
     def next_passed_question(self):
         # Go to the next passed question in the queue, or next unanswered if none
