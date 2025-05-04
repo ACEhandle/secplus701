@@ -1,0 +1,29 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Network Security",
+      "description": "Understanding network security concepts, including firewalls, VPNs, and intrusion detection systems."
+    },
+    {
+      "id": 2,
+      "title": "Compliance and Operational Security",
+      "description": "Knowledge of compliance frameworks, risk management, and operational security practices."
+    },
+    {
+      "id": 3,
+      "title": "Threats and Vulnerabilities",
+      "description": "Identifying and mitigating threats and vulnerabilities in various environments."
+    },
+    {
+      "id": 4,
+      "title": "Access Control and Identity Management",
+      "description": "Understanding access control models, identity management, and authentication mechanisms."
+    },
+    {
+      "id": 5,
+      "title": "Cryptography",
+      "description": "Knowledge of cryptographic concepts, algorithms, and their applications in securing data."
+    }
+  ]
+}

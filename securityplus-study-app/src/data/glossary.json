@@ -1,0 +1,40 @@
+{
+  "terms": [
+    {
+      "term": "Authentication",
+      "definition": "The process of verifying the identity of a user or system."
+    },
+    {
+      "term": "Authorization",
+      "definition": "The process of granting or denying access to resources based on the authenticated identity."
+    },
+    {
+      "term": "Encryption",
+      "definition": "The method of converting information or data into a code to prevent unauthorized access."
+    },
+    {
+      "term": "Malware",
+      "definition": "Malicious software designed to harm, exploit, or otherwise compromise a computer system."
+    },
+    {
+      "term": "Phishing",
+      "definition": "A fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity in electronic communication."
+    },
+    {
+      "term": "Firewall",
+      "definition": "A network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules."
+    },
+    {
+      "term": "VPN",
+      "definition": "A Virtual Private Network that creates a secure connection over a less secure network, such as the Internet."
+    },
+    {
+      "term": "Incident Response",
+      "definition": "The approach taken to prepare for, detect, contain, and recover from a cybersecurity incident."
+    },
+    {
+      "term": "Social Engineering",
+      "definition": "The psychological manipulation of people into performing actions or divulging confidential information."
+    }
+  ]
+}

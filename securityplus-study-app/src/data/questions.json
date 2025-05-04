@@ -1,0 +1,129 @@
+{
+  "modules": {
+    "Network Security": [
+      {
+        "question": "What is the primary purpose of a firewall?",
+        "options": [
+          "To provide physical security",
+          "To filter incoming and outgoing network traffic",
+          "To encrypt data",
+          "To manage user access"
+        ],
+        "answer": "To filter incoming and outgoing network traffic",
+        "explanation": "A firewall filters network traffic to block unauthorized access while permitting legitimate communication."
+      },
+      {
+        "question": "Which protocol is used for secure data transmission over the internet?",
+        "options": [
+          "HTTP",
+          "FTP",
+          "HTTPS",
+          "SMTP"
+        ],
+        "answer": "HTTPS",
+        "explanation": "HTTPS encrypts data between the browser and server, ensuring secure transmission."
+      }
+    ],
+    "Compliance and Operational Security": [
+      {
+        "question": "What is the purpose of encryption?",
+        "options": [
+          "To speed up data transfer",
+          "To protect data from unauthorized access",
+          "To compress data",
+          "To backup data"
+        ],
+        "answer": "To protect data from unauthorized access",
+        "explanation": "Encryption ensures that only authorized parties can read the protected data."
+      }
+    ],
+    "Threats and Vulnerabilities": [
+      {
+        "question": "Which of the following is a common type of malware?",
+        "options": [
+          "Trojan",
+          "Router",
+          "Switch",
+          "Firewall"
+        ],
+        "answer": "Trojan",
+        "explanation": "A Trojan is a type of malware disguised as legitimate software."
+      }
+    ],
+    "Access Control and Identity Management": [
+      {
+        "question": "What does the acronym VPN stand for?",
+        "options": [
+          "Virtual Private Network",
+          "Virtual Public Network",
+          "Variable Private Network",
+          "Variable Public Network"
+        ],
+        "answer": "Virtual Private Network",
+        "explanation": "VPN stands for Virtual Private Network, which provides secure remote access."
+      }
+    ]
+  },
+  "full_exams": [
+    {
+      "title": "Practice Exam 1",
+      "questions": [
+        {
+          "question": "What is the primary purpose of a firewall?",
+          "options": [
+            "To provide physical security",
+            "To filter incoming and outgoing network traffic",
+            "To encrypt data",
+            "To manage user access"
+          ],
+          "answer": "To filter incoming and outgoing network traffic",
+          "explanation": "A firewall filters network traffic to block unauthorized access while permitting legitimate communication."
+        },
+        {
+          "question": "Which of the following is a common type of malware?",
+          "options": [
+            "Trojan",
+            "Router",
+            "Switch",
+            "Firewall"
+          ],
+          "answer": "Trojan",
+          "explanation": "A Trojan is a type of malware disguised as legitimate software."
+        },
+        {
+          "question": "What does the acronym VPN stand for?",
+          "options": [
+            "Virtual Private Network",
+            "Virtual Public Network",
+            "Variable Private Network",
+            "Variable Public Network"
+          ],
+          "answer": "Virtual Private Network",
+          "explanation": "VPN stands for Virtual Private Network, which provides secure remote access."
+        },
+        {
+          "question": "Which protocol is used for secure data transmission over the internet?",
+          "options": [
+            "HTTP",
+            "FTP",
+            "HTTPS",
+            "SMTP"
+          ],
+          "answer": "HTTPS",
+          "explanation": "HTTPS encrypts data between the browser and server, ensuring secure transmission."
+        },
+        {
+          "question": "What is the purpose of encryption?",
+          "options": [
+            "To speed up data transfer",
+            "To protect data from unauthorized access",
+            "To compress data",
+            "To backup data"
+          ],
+          "answer": "To protect data from unauthorized access",
+          "explanation": "Encryption ensures that only authorized parties can read the protected data."
+        }
+      ]
+    }
+  ]
+}
