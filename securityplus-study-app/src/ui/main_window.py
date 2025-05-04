@@ -59,12 +59,10 @@ class MainWindow:
         self.current_view.pack(fill='both', expand=True)
 
     def toggle_mode(self):
-        if self.current_mode == "dark":
+        if ctk.get_appearance_mode() == "Dark":
             ctk.set_appearance_mode("light")
-            self.current_mode = "light"
         else:
             ctk.set_appearance_mode("dark")
-            self.current_mode = "dark"
 
 if __name__ == "__main__":
     root = ctk.CTk()
