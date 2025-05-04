@@ -17,7 +17,7 @@ class FlashcardsView(Frame):
         self.next_card()
 
     def load_terms(self):
-        with open(os.path.join(DATA_DIR, 'glossary.json'), 'r') as file:
+        with open(os.path.join(DATA_DIR, 'glossary_secplus.json'), 'r') as file:
             glossary_data = json.load(file)
             return glossary_data.get('terms', [])
 

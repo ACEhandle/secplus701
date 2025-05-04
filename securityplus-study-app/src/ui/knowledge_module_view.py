@@ -23,7 +23,7 @@ class KnowledgeModuleView(Frame):
         self.scrollbar.config(command=self.text_area.yview)
 
     def load_knowledge_modules(self):
-        with open(os.path.join(DATA_DIR, 'modules.json'), 'r') as file:
+        with open(os.path.join(DATA_DIR, 'modules_secplus.json'), 'r') as file:
             modules = json.load(file)
             for module in modules['modules']:
                 self.text_area.insert('end', f"{module['title']}\n{module['description']}\n\n")

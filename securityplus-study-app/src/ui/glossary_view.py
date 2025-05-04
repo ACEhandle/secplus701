@@ -28,7 +28,7 @@ class GlossaryView(Frame):
         self.definition_label.pack(pady=10, fill="x", padx=10)
 
     def load_glossary(self):
-        with open(os.path.join(DATA_DIR, 'glossary.json'), 'r') as file:
+        with open(os.path.join(DATA_DIR, 'glossary_secplus.json'), 'r') as file:
             glossary_data = json.load(file)
             self.terms = glossary_data.get('terms', [])
             self.glossary_list.delete(0, END)

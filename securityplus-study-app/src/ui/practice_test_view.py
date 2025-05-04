@@ -8,7 +8,7 @@ class PracticeTestView(Frame):
     def __init__(self, master):
         super().__init__(master, bg="#222222")
         self.master = master
-        questions_path = os.path.join(DATA_DIR, "questions.json")
+        questions_path = os.path.join(DATA_DIR, "questions_secplus.json")
         self.practice_tests = PracticeTests(questions_path)
         self.current_question_index = 0
         self.user_answers = []
