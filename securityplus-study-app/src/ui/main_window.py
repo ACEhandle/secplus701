@@ -30,7 +30,7 @@ class MainWindow:
         self.flashcards_button.pack(pady=5)
 
         # Place the light/dark mode switch at the top right
-        self.toggle_mode_switch = ctk.CTkSwitch(master, text="Dark Mode", command=self.toggle_mode)
+        self.toggle_mode_switch = ctk.CTkSwitch(master, text="Light Mode", command=self.toggle_mode)
         self.toggle_mode_switch.select()  # Default to dark mode
         self.toggle_mode_switch.place(relx=1.0, rely=0.0, anchor="ne", x=-10, y=10)
 
@@ -63,8 +63,10 @@ class MainWindow:
     def toggle_mode(self):
         if self.toggle_mode_switch.get():
             ctk.set_appearance_mode("dark")
+            self.toggle_mode_switch.configure(text="Light Mode")
         else:
             ctk.set_appearance_mode("light")
+            self.toggle_mode_switch.configure(text="Dark Mode")
 
 if __name__ == "__main__":
     root = ctk.CTk()
