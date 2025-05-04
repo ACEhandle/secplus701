@@ -72,6 +72,66 @@
         ],
         "answer": "To identify weaknesses in systems",
         "explanation": "Vulnerability scanners search for known weaknesses in systems and applications."
+      },
+      {
+        "question": "Which of the following is a common method used to escalate privileges on a compromised system?",
+        "options": ["Phishing", "Privilege Escalation", "DDoS", "Brute Force"],
+        "answer": "Privilege Escalation",
+        "explanation": "Privilege escalation exploits vulnerabilities to gain higher access rights on a system."
+      },
+      {
+        "question": "What is the primary purpose of a honeypot in cybersecurity?",
+        "options": ["To store sensitive data", "To attract and analyze attackers", "To block malware", "To encrypt traffic"],
+        "answer": "To attract and analyze attackers",
+        "explanation": "A honeypot is a decoy system used to lure attackers and study their methods."
+      },
+      {
+        "question": "Which attack involves intercepting communication between two parties without their knowledge?",
+        "options": ["Man-in-the-Middle", "Phishing", "Ransomware", "SQL Injection"],
+        "answer": "Man-in-the-Middle",
+        "explanation": "A Man-in-the-Middle (MitM) attack secretly relays and possibly alters communication between two parties."
+      },
+      {
+        "question": "What is the main goal of ransomware?",
+        "options": ["To steal credentials", "To demand payment for data decryption", "To monitor network traffic", "To escalate privileges"],
+        "answer": "To demand payment for data decryption",
+        "explanation": "Ransomware encrypts data and demands payment for its release."
+      },
+      {
+        "question": "Which of the following is an example of a physical security attack?",
+        "options": ["Tailgating", "Phishing", "Cross-site scripting", "Buffer overflow"],
+        "answer": "Tailgating",
+        "explanation": "Tailgating is a physical security breach where an unauthorized person follows an authorized person into a secure area."
+      },
+      {
+        "question": "Which of the following is a type of attack that tricks users into clicking on something different from what they perceive, often used to steal credentials?",
+        "options": ["Clickjacking", "Pharming", "Vishing", "Smishing"],
+        "answer": "Clickjacking",
+        "explanation": "Clickjacking tricks users into clicking on something different from what they perceive, often to steal credentials or perform malicious actions."
+      },
+      {
+        "question": "What is the primary purpose of a logic bomb?",
+        "options": ["To encrypt files for ransom", "To execute a malicious function when certain conditions are met", "To monitor network traffic", "To escalate privileges"],
+        "answer": "To execute a malicious function when certain conditions are met",
+        "explanation": "A logic bomb is a piece of code that executes a malicious function when specific conditions are met."
+      },
+      {
+        "question": "Which attack involves sending fraudulent emails that appear to come from a trusted source?",
+        "options": ["Phishing", "Whaling", "Spear Phishing", "All of the above"],
+        "answer": "All of the above",
+        "explanation": "Phishing, whaling, and spear phishing are all types of email-based social engineering attacks."
+      },
+      {
+        "question": "What is the main difference between a worm and a virus?",
+        "options": ["A worm requires user action to spread, a virus does not", "A virus requires user action to spread, a worm does not", "Both require user action to spread", "Neither require user action to spread"],
+        "answer": "A virus requires user action to spread, a worm does not",
+        "explanation": "A virus requires user action to spread, while a worm can self-replicate and spread without user intervention."
+      },
+      {
+        "question": "Which of the following is a tool used to capture and analyze network traffic?",
+        "options": ["Wireshark", "Metasploit", "Nmap", "John the Ripper"],
+        "answer": "Wireshark",
+        "explanation": "Wireshark is a popular tool for capturing and analyzing network traffic."
       }
     ],
     "Architecture and Design": [
@@ -96,6 +156,36 @@
         ],
         "answer": "Users should have the minimum level of access necessary to perform their job functions.",
         "explanation": "The principle of least privilege states that users should be granted the minimum levels of access needed to perform their job functions."
+      },
+      {
+        "question": "Which of the following is a security benefit of network segmentation?",
+        "options": ["Improved performance", "Reduced attack surface", "Lower hardware costs", "Increased wireless range"],
+        "answer": "Reduced attack surface",
+        "explanation": "Network segmentation reduces the attack surface by isolating sensitive systems and limiting lateral movement."
+      },
+      {
+        "question": "What is the main purpose of a DMZ (Demilitarized Zone) in network architecture?",
+        "options": ["To store sensitive data", "To isolate public-facing services from the internal network", "To increase wireless coverage", "To encrypt all network traffic"],
+        "answer": "To isolate public-facing services from the internal network",
+        "explanation": "A DMZ is used to isolate public-facing services from the internal network, adding an extra layer of security."
+      },
+      {
+        "question": "Which cloud deployment model is shared by multiple organizations with similar requirements?",
+        "options": ["Public cloud", "Private cloud", "Community cloud", "Hybrid cloud"],
+        "answer": "Community cloud",
+        "explanation": "A community cloud is shared by several organizations with similar requirements."
+      },
+      {
+        "question": "What is the primary function of a proxy server?",
+        "options": ["To encrypt data", "To filter and forward requests between clients and servers", "To store backup data", "To manage user accounts"],
+        "answer": "To filter and forward requests between clients and servers",
+        "explanation": "A proxy server filters and forwards requests between clients and servers, often providing security and caching."
+      },
+      {
+        "question": "Which of the following is a benefit of virtualization in security architecture?",
+        "options": ["Easier patch management", "Increased physical hardware", "Reduced need for backups", "Decreased network segmentation"],
+        "answer": "Easier patch management",
+        "explanation": "Virtualization allows for easier patch management and rapid deployment of security updates."
       }
     ],
     "Implementation": [
@@ -116,6 +206,36 @@
         "options": ["HTTP", "FTP", "SSL/TLS", "Telnet"],
         "answer": "SSL/TLS",
         "explanation": "SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols designed to provide secure communication over a computer network."
+      },
+      {
+        "question": "Which protocol is commonly used for secure email communication?",
+        "options": ["SMTP", "IMAP", "POP3", "SMTPS"],
+        "answer": "SMTPS",
+        "explanation": "SMTPS (Simple Mail Transfer Protocol Secure) is used for secure email communication."
+      },
+      {
+        "question": "What is the main purpose of port security on a switch?",
+        "options": ["To block all traffic", "To limit the number of devices on a port", "To encrypt data", "To increase bandwidth"],
+        "answer": "To limit the number of devices on a port",
+        "explanation": "Port security limits the number of devices that can connect to a switch port, reducing the risk of unauthorized access."
+      },
+      {
+        "question": "Which of the following is a secure protocol for remote administration of network devices?",
+        "options": ["Telnet", "SSH", "FTP", "HTTP"],
+        "answer": "SSH",
+        "explanation": "SSH is a secure protocol for remote administration of network devices."
+      },
+      {
+        "question": "What is the primary function of a digital certificate?",
+        "options": ["To encrypt data", "To authenticate the identity of a user or device", "To store passwords", "To manage network traffic"],
+        "answer": "To authenticate the identity of a user or device",
+        "explanation": "A digital certificate is used to authenticate the identity of a user or device."
+      },
+      {
+        "question": "Which of the following is a method for securely storing passwords?",
+        "options": ["Plain text", "Hashing with salt", "Base64 encoding", "Symmetric encryption only"],
+        "answer": "Hashing with salt",
+        "explanation": "Hashing with salt is a secure method for storing passwords, making them harder to crack."
       }
     ],
     "Operations and Incident Response": [
@@ -135,6 +255,36 @@
         "options": ["IDS", "IPS", "VPN", "Firewall"],
         "answer": "Firewall",
         "explanation": "A firewall is designed to block unauthorized access while permitting outward communication."
+      },
+      {
+        "question": "Which of the following is a key step in the forensic process?",
+        "options": ["Erasing evidence", "Chain of custody", "Ignoring volatile data", "Disabling logging"],
+        "answer": "Chain of custody",
+        "explanation": "Chain of custody ensures the integrity and admissibility of evidence in the forensic process."
+      },
+      {
+        "question": "What is the main goal of business continuity planning?",
+        "options": ["To increase profits", "To ensure critical operations continue during a disruption", "To reduce staff", "To encrypt all data"],
+        "answer": "To ensure critical operations continue during a disruption",
+        "explanation": "Business continuity planning ensures that critical operations can continue during and after a disruption."
+      },
+      {
+        "question": "Which of the following is an example of a compensating control?",
+        "options": ["Firewall", "Antivirus software", "Manual review process", "Encryption"],
+        "answer": "Manual review process",
+        "explanation": "A manual review process is a compensating control when a standard control is not feasible."
+      },
+      {
+        "question": "What is the purpose of a tabletop exercise in incident response?",
+        "options": ["To test physical security", "To simulate incident scenarios for training", "To install patches", "To monitor network traffic"],
+        "answer": "To simulate incident scenarios for training",
+        "explanation": "A tabletop exercise simulates incident scenarios to train staff and improve response plans."
+      },
+      {
+        "question": "Which of the following is a primary objective of incident containment?",
+        "options": ["To eradicate malware", "To limit the impact of an incident", "To notify law enforcement", "To restore backups"],
+        "answer": "To limit the impact of an incident",
+        "explanation": "Incident containment aims to limit the impact and spread of a security incident."
       }
     ],
     "Governance, Risk, and Compliance": [
@@ -143,6 +293,36 @@
         "options": ["GDPR", "HIPAA", "PCI DSS", "SOX"],
         "answer": "HIPAA",
         "explanation": "HIPAA (Health Insurance Portability and Accountability Act) protects health information privacy."
+      },
+      {
+        "question": "Which of the following frameworks is commonly used for risk management in the United States?",
+        "options": ["NIST RMF", "ISO 27001", "GDPR", "PCI DSS"],
+        "answer": "NIST RMF",
+        "explanation": "NIST Risk Management Framework (RMF) is widely used for risk management in the US."
+      },
+      {
+        "question": "What is the main purpose of a security policy?",
+        "options": ["To increase profits", "To provide guidelines for protecting assets", "To reduce staff", "To encrypt all data"],
+        "answer": "To provide guidelines for protecting assets",
+        "explanation": "A security policy provides guidelines and rules for protecting an organization's assets."
+      },
+      {
+        "question": "Which law regulates the protection of credit card information?",
+        "options": ["HIPAA", "PCI DSS", "SOX", "FERPA"],
+        "answer": "PCI DSS",
+        "explanation": "PCI DSS regulates the protection of credit card information."
+      },
+      {
+        "question": "What is the primary goal of compliance audits?",
+        "options": ["To punish employees", "To ensure adherence to laws and regulations", "To increase profits", "To reduce staff"],
+        "answer": "To ensure adherence to laws and regulations",
+        "explanation": "Compliance audits ensure that organizations adhere to relevant laws and regulations."
+      },
+      {
+        "question": "Which of the following is a benefit of user awareness training?",
+        "options": ["Increased risk", "Reduced risk of social engineering attacks", "Higher costs", "Decreased compliance"],
+        "answer": "Reduced risk of social engineering attacks",
+        "explanation": "User awareness training reduces the risk of social engineering and other user-targeted attacks."
       }
     ]
   },
