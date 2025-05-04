@@ -7,8 +7,9 @@ from ui.flashcards_view import FlashcardsView
 class MainWindow:
     def __init__(self, master):
         self.master = master
-        ctk.set_appearance_mode("dark")
+        ctk.set_appearance_mode("dark")  # Default to dark mode
         ctk.set_default_color_theme("blue")
+        self.current_mode = "dark"
         master.title("Security Plus Study App")
         master.geometry("800x600")
         self.current_view = None
@@ -27,6 +28,9 @@ class MainWindow:
 
         self.flashcards_button = ctk.CTkButton(master, text="Flashcards", command=self.open_flashcards)
         self.flashcards_button.pack(pady=5)
+
+        self.toggle_mode_button = ctk.CTkButton(master, text="Toggle Light/Dark Mode", command=self.toggle_mode)
+        self.toggle_mode_button.pack(pady=5)
 
     def clear_view(self):
         if self.current_view:
@@ -53,6 +57,14 @@ class MainWindow:
         self.clear_view()
         self.current_view = FlashcardsView(self.master)
         self.current_view.pack(fill='both', expand=True)
+
+    def toggle_mode(self):
+        if self.current_mode == "dark":
+            ctk.set_appearance_mode("light")
+            self.current_mode = "light"
+        else:
+            ctk.set_appearance_mode("dark")
+            self.current_mode = "dark"
 
 if __name__ == "__main__":
     root = ctk.CTk()
