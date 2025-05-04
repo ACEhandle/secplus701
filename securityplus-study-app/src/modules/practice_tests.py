@@ -1,4 +1,5 @@
 import json
+import random
 
 class PracticeTests:
     def __init__(self, questions_file):
@@ -10,14 +11,18 @@ class PracticeTests:
         with open(self.questions_file, 'r') as file:
             return json.load(file)
 
-    def load_module_questions(self, module_name):
-        self.current_questions = self.data['modules'].get(module_name, [])
+    def load_module_questions(self, module_name, num_questions=10):
+        questions = self.data['modules'].get(module_name, [])
+        random.shuffle(questions)
+        self.current_questions = questions[:num_questions]
         return self.current_questions
 
-    def load_full_exam(self, exam_index=0):
+    def load_full_exam(self, exam_index=0, num_questions=100):
         exams = self.data.get('full_exams', [])
         if 0 <= exam_index < len(exams):
-            self.current_questions = exams[exam_index]['questions']
+            questions = exams[exam_index]['questions']
+            random.shuffle(questions)
+            self.current_questions = questions[:num_questions]
             return self.current_questions
         self.current_questions = []
         return []
