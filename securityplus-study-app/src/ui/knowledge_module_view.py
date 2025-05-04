@@ -25,7 +25,7 @@ class KnowledgeModuleView(Frame):
     def load_knowledge_modules(self):
         with open(os.path.join(DATA_DIR, 'modules.json'), 'r') as file:
             modules = json.load(file)
-            for module in modules:
+            for module in modules['modules']:
                 self.text_area.insert('end', f"{module['title']}\n{module['description']}\n\n")
         self.text_area.config(state='disabled')  # Make text area read-only
 
