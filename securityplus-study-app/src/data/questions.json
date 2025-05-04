@@ -1,66 +1,148 @@
 {
   "modules": {
-    "Network Security": [
+    "Attacks, Threats, and Vulnerabilities": [
       {
-        "question": "What is the primary purpose of a firewall?",
-        "options": [
-          "To provide physical security",
-          "To filter incoming and outgoing network traffic",
-          "To encrypt data",
-          "To manage user access"
-        ],
-        "answer": "To filter incoming and outgoing network traffic",
-        "explanation": "A firewall filters network traffic to block unauthorized access while permitting legitimate communication."
+        "question": "Which type of malware is designed to provide unauthorized remote access to a compromised system?",
+        "options": ["Rootkit", "Ransomware", "Worm", "Adware"],
+        "answer": "Rootkit",
+        "explanation": "Rootkits allow attackers to maintain privileged access to a system while hiding their presence."
       },
       {
-        "question": "Which protocol is used for secure data transmission over the internet?",
+        "question": "What is the primary goal of a phishing attack?",
         "options": [
-          "HTTP",
-          "FTP",
-          "HTTPS",
-          "SMTP"
+          "To disrupt network traffic",
+          "To steal sensitive information",
+          "To encrypt files for ransom",
+          "To overload a server"
         ],
-        "answer": "HTTPS",
-        "explanation": "HTTPS encrypts data between the browser and server, ensuring secure transmission."
+        "answer": "To steal sensitive information",
+        "explanation": "Phishing attacks trick users into revealing confidential data such as passwords or credit card numbers."
+      },
+      {
+        "question": "Which of the following best describes a zero-day vulnerability?",
+        "options": [
+          "A vulnerability that is publicly known and patched",
+          "A vulnerability that is exploited before it is known to the vendor",
+          "A vulnerability that only affects legacy systems",
+          "A vulnerability that is used in phishing attacks"
+        ],
+        "answer": "A vulnerability that is exploited before it is known to the vendor",
+        "explanation": "A zero-day vulnerability is exploited by attackers before the vendor is aware and can issue a patch."
+      },
+      {
+        "question": "What is the primary purpose of a DDoS attack?",
+        "options": [
+          "To steal credentials",
+          "To disrupt service availability",
+          "To install ransomware",
+          "To exfiltrate data"
+        ],
+        "answer": "To disrupt service availability",
+        "explanation": "Distributed Denial of Service (DDoS) attacks aim to overwhelm a service, making it unavailable to users."
+      },
+      {
+        "question": "Which term describes an attacker who is motivated by ideology or political beliefs?",
+        "options": [
+          "Script kiddie",
+          "Hacktivist",
+          "Insider threat",
+          "State actor"
+        ],
+        "answer": "Hacktivist",
+        "explanation": "Hacktivists are motivated by political or social causes."
+      },
+      {
+        "question": "Which of the following is an example of social engineering?",
+        "options": [
+          "Phishing email",
+          "SQL injection",
+          "Buffer overflow",
+          "Cross-site scripting"
+        ],
+        "answer": "Phishing email",
+        "explanation": "Phishing is a social engineering technique that manipulates people into revealing information."
+      },
+      {
+        "question": "What is the main function of a vulnerability scanner?",
+        "options": [
+          "To detect malware",
+          "To identify weaknesses in systems",
+          "To block network traffic",
+          "To encrypt sensitive data"
+        ],
+        "answer": "To identify weaknesses in systems",
+        "explanation": "Vulnerability scanners search for known weaknesses in systems and applications."
       }
     ],
-    "Compliance and Operational Security": [
+    "Architecture and Design": [
       {
-        "question": "What is the purpose of encryption?",
+        "question": "Which security model is based on the principle of least privilege?",
         "options": [
-          "To speed up data transfer",
-          "To protect data from unauthorized access",
-          "To compress data",
-          "To backup data"
+          "Discretionary Access Control (DAC)",
+          "Mandatory Access Control (MAC)",
+          "Role-Based Access Control (RBAC)",
+          "Rule-Based Access Control"
         ],
-        "answer": "To protect data from unauthorized access",
-        "explanation": "Encryption ensures that only authorized parties can read the protected data."
+        "answer": "Role-Based Access Control (RBAC)",
+        "explanation": "RBAC assigns permissions based on roles, ensuring users have only the access necessary for their job."
+      },
+      {
+        "question": "Which of the following best describes the principle of least privilege?",
+        "options": [
+          "Users should have access to all resources at all times.",
+          "Users should have the minimum level of access necessary to perform their job functions.",
+          "Users should only access data on a need-to-know basis.",
+          "Users should have administrator access to their workstations."
+        ],
+        "answer": "Users should have the minimum level of access necessary to perform their job functions.",
+        "explanation": "The principle of least privilege states that users should be granted the minimum levels of access needed to perform their job functions."
       }
     ],
-    "Threats and Vulnerabilities": [
+    "Implementation": [
       {
-        "question": "Which of the following is a common type of malware?",
-        "options": [
-          "Trojan",
-          "Router",
-          "Switch",
-          "Firewall"
-        ],
-        "answer": "Trojan",
-        "explanation": "A Trojan is a type of malware disguised as legitimate software."
+        "question": "Which protocol is used to securely manage network devices over an encrypted connection?",
+        "options": ["Telnet", "SSH", "FTP", "SNMPv1"],
+        "answer": "SSH",
+        "explanation": "SSH (Secure Shell) provides encrypted remote management of network devices."
+      },
+      {
+        "question": "Which of the following encryption methods is commonly used to ensure data integrity?",
+        "options": ["AES", "RSA", "SHA", "DES"],
+        "answer": "SHA",
+        "explanation": "Secure Hash Algorithm (SHA) is used to ensure data integrity by producing a unique hash value that represents data."
+      },
+      {
+        "question": "A company wants to ensure that its data is encrypted during transmission over the internet. Which protocol should they use?",
+        "options": ["HTTP", "FTP", "SSL/TLS", "Telnet"],
+        "answer": "SSL/TLS",
+        "explanation": "SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols designed to provide secure communication over a computer network."
       }
     ],
-    "Access Control and Identity Management": [
+    "Operations and Incident Response": [
       {
-        "question": "What does the acronym VPN stand for?",
+        "question": "What is the first step in the incident response process?",
         "options": [
-          "Virtual Private Network",
-          "Virtual Public Network",
-          "Variable Private Network",
-          "Variable Public Network"
+          "Containment",
+          "Eradication",
+          "Identification",
+          "Recovery"
         ],
-        "answer": "Virtual Private Network",
-        "explanation": "VPN stands for Virtual Private Network, which provides secure remote access."
+        "answer": "Identification",
+        "explanation": "Identification is the initial step where incidents are detected and reported."
+      },
+      {
+        "question": "A company needs to implement a security solution that will prevent unauthorized access to its network resources. Which of the following should they deploy?",
+        "options": ["IDS", "IPS", "VPN", "Firewall"],
+        "answer": "Firewall",
+        "explanation": "A firewall is designed to block unauthorized access while permitting outward communication."
+      }
+    ],
+    "Governance, Risk, and Compliance": [
+      {
+        "question": "Which regulation is primarily concerned with protecting the privacy of healthcare information in the United States?",
+        "options": ["GDPR", "HIPAA", "PCI DSS", "SOX"],
+        "answer": "HIPAA",
+        "explanation": "HIPAA (Health Insurance Portability and Accountability Act) protects health information privacy."
       }
     ]
   },
@@ -69,59 +151,39 @@
       "title": "Practice Exam 1",
       "questions": [
         {
-          "question": "What is the primary purpose of a firewall?",
-          "options": [
-            "To provide physical security",
-            "To filter incoming and outgoing network traffic",
-            "To encrypt data",
-            "To manage user access"
-          ],
-          "answer": "To filter incoming and outgoing network traffic",
-          "explanation": "A firewall filters network traffic to block unauthorized access while permitting legitimate communication."
-        },
-        {
-          "question": "Which of the following is a common type of malware?",
-          "options": [
-            "Trojan",
-            "Router",
-            "Switch",
-            "Firewall"
-          ],
-          "answer": "Trojan",
-          "explanation": "A Trojan is a type of malware disguised as legitimate software."
-        },
-        {
-          "question": "What does the acronym VPN stand for?",
-          "options": [
-            "Virtual Private Network",
-            "Virtual Public Network",
-            "Variable Private Network",
-            "Variable Public Network"
-          ],
-          "answer": "Virtual Private Network",
-          "explanation": "VPN stands for Virtual Private Network, which provides secure remote access."
-        },
-        {
-          "question": "Which protocol is used for secure data transmission over the internet?",
-          "options": [
-            "HTTP",
-            "FTP",
-            "HTTPS",
-            "SMTP"
-          ],
+          "question": "Which protocol uses port 443 and provides encrypted communication over the Internet?",
+          "options": ["HTTP", "FTP", "HTTPS", "SMTP"],
           "answer": "HTTPS",
-          "explanation": "HTTPS encrypts data between the browser and server, ensuring secure transmission."
+          "explanation": "HTTPS (Hypertext Transfer Protocol Secure) uses port 443 and encrypts data between client and server."
         },
         {
-          "question": "What is the purpose of encryption?",
+          "question": "A user receives an email that appears to be from their bank, asking them to click a link and enter their credentials. What type of attack is this?",
+          "options": ["Phishing", "DDoS", "Man-in-the-middle", "Ransomware"],
+          "answer": "Phishing",
+          "explanation": "Phishing attacks use fraudulent emails to trick users into revealing sensitive information."
+        },
+        {
+          "question": "What does the acronym IDS stand for in cybersecurity?",
           "options": [
-            "To speed up data transfer",
-            "To protect data from unauthorized access",
-            "To compress data",
-            "To backup data"
+            "Internet Data Service",
+            "Intrusion Detection System",
+            "Internal Data Security",
+            "Information Defense System"
           ],
-          "answer": "To protect data from unauthorized access",
-          "explanation": "Encryption ensures that only authorized parties can read the protected data."
+          "answer": "Intrusion Detection System",
+          "explanation": "IDS stands for Intrusion Detection System, which monitors network traffic for suspicious activity."
+        },
+        {
+          "question": "Which security principle ensures that data is only accessible to those authorized to view it?",
+          "options": ["Integrity", "Availability", "Confidentiality", "Non-repudiation"],
+          "answer": "Confidentiality",
+          "explanation": "Confidentiality ensures that sensitive information is only accessible to authorized users."
+        },
+        {
+          "question": "Which device is used to segment a network and reduce broadcast traffic?",
+          "options": ["Switch", "Router", "Firewall", "Hub"],
+          "answer": "Switch",
+          "explanation": "Switches segment networks and reduce unnecessary broadcast traffic."
         }
       ]
     }

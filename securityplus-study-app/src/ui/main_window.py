@@ -8,6 +8,7 @@ class MainWindow:
         self.master = master
         master.title("Security Plus Study App")
         master.configure(bg="#222222")
+        master.geometry("800x600")  # Set a wider default window size
         self.current_view = None
 
         self.label = Label(master, text="Welcome to the Security Plus Study App", bg="#222222", fg="#f0f0f0")

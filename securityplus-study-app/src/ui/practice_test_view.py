@@ -16,6 +16,7 @@ class PracticeTestView(Frame):
         self.test_type = StringVar()
         self.selection_var = StringVar()
         self.selection_var.set("")
+        self.passed_questions = []
         self.setup_selection_screen()
 
     def setup_selection_screen(self):
@@ -46,6 +47,7 @@ class PracticeTestView(Frame):
             widget.destroy()
         self.current_question_index = 0
         self.user_answers = []
+        self.passed_questions = []
         if self.test_type.get() == "Module":
             self.questions = self.practice_tests.load_module_questions(self.selection_var.get())
         else:
@@ -59,14 +61,18 @@ class PracticeTestView(Frame):
         self.load_question()
 
     def setup_test_ui(self):
-        self.question_label = Label(self, text="", wraplength=400, bg="#222222", fg="#f0f0f0")
+        self.question_label = Label(self, text="", wraplength=700, bg="#222222", fg="#f0f0f0")
         self.question_label.pack(pady=20)
-        self.answer_listbox = Listbox(self, bg="#333333", fg="#f0f0f0", selectbackground="#444444", selectforeground="#ffffff")
-        self.answer_listbox.pack(pady=10)
+        self.answer_listbox = Listbox(self, bg="#333333", fg="#f0f0f0", selectbackground="#444444", selectforeground="#ffffff", width=80)
+        self.answer_listbox.pack(pady=10, fill='x', padx=20)
         self.submit_button = Button(self, text="Submit Answer", command=self.submit_answer, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
         self.submit_button.pack(pady=10)
-        self.next_button = Button(self, text="Next Question", command=self.next_question, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
-        self.next_button.pack(pady=10)
+        self.pass_button = Button(self, text="Pass", command=self.pass_question, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
+        self.pass_button.pack(pady=10)
+        self.back_button = Button(self, text="Back", command=self.back_question, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
+        self.back_button.pack(pady=10)
+        self.review_passed_button = Button(self, text="Review Passed", command=self.review_passed_questions, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
+        self.review_passed_button.pack(pady=10)
         self.result_button = Button(self, text="View Results", command=self.view_results, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
         self.result_button.pack(pady=10)
 
@@ -88,9 +94,26 @@ class PracticeTestView(Frame):
                 self.user_answers.append(selected_answer)
             else:
                 self.user_answers[self.current_question_index] = selected_answer
-            messagebox.showinfo("Info", "Answer submitted!")
+            self.next_question()
         else:
             messagebox.showwarning("Warning", "Please select an answer.")
+
+    def pass_question(self):
+        if self.current_question_index not in self.passed_questions:
+            self.passed_questions.append(self.current_question_index)
+        self.next_question()
+
+    def back_question(self):
+        if self.current_question_index > 0:
+            self.current_question_index -= 1
+            self.load_question()
+
+    def review_passed_questions(self):
+        if self.passed_questions:
+            self.current_question_index = self.passed_questions[0]
+            self.load_question()
+        else:
+            messagebox.showinfo("Info", "No passed questions to review.")
 
     def next_question(self):
         if self.current_question_index < len(self.questions) - 1:
