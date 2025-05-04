@@ -2,6 +2,7 @@ from tkinter import Tk, Frame, Button, Label, StringVar
 from ui.practice_test_view import PracticeTestView
 from ui.knowledge_module_view import KnowledgeModuleView
 from ui.glossary_view import GlossaryView
+from ui.flashcards_view import FlashcardsView
 
 class MainWindow:
     def __init__(self, master):
@@ -23,6 +24,9 @@ class MainWindow:
         self.glossary_button = Button(master, text="Glossary", command=self.open_glossary, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
         self.glossary_button.pack()
 
+        self.flashcards_button = Button(master, text="Flashcards", command=self.open_flashcards, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
+        self.flashcards_button.pack()
+
     def clear_view(self):
         if self.current_view:
             self.current_view.pack_forget()
@@ -42,6 +46,11 @@ class MainWindow:
     def open_glossary(self):
         self.clear_view()
         self.current_view = GlossaryView(self.master)
+        self.current_view.pack(fill='both', expand=True)
+
+    def open_flashcards(self):
+        self.clear_view()
+        self.current_view = FlashcardsView(self.master)
         self.current_view.pack(fill='both', expand=True)
 
 if __name__ == "__main__":
