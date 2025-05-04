@@ -1,4 +1,4 @@
-from tkinter import Tk, Frame, Button, Label, StringVar
+import customtkinter as ctk
 from ui.practice_test_view import PracticeTestView
 from ui.knowledge_module_view import KnowledgeModuleView
 from ui.glossary_view import GlossaryView
@@ -7,25 +7,26 @@ from ui.flashcards_view import FlashcardsView
 class MainWindow:
     def __init__(self, master):
         self.master = master
+        ctk.set_appearance_mode("dark")
+        ctk.set_default_color_theme("blue")
         master.title("Security Plus Study App")
-        master.configure(bg="#222222")
-        master.geometry("800x600")  # Set a wider default window size
+        master.geometry("800x600")
         self.current_view = None
 
-        self.label = Label(master, text="Welcome to the Security Plus Study App", bg="#222222", fg="#f0f0f0")
-        self.label.pack()
+        self.label = ctk.CTkLabel(master, text="Welcome to the Security Plus Study App")
+        self.label.pack(pady=10)
 
-        self.practice_test_button = Button(master, text="Practice Tests", command=self.open_practice_tests, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
-        self.practice_test_button.pack()
+        self.practice_test_button = ctk.CTkButton(master, text="Practice Tests", command=self.open_practice_tests)
+        self.practice_test_button.pack(pady=5)
 
-        self.knowledge_modules_button = Button(master, text="Knowledge Modules", command=self.open_knowledge_modules, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
-        self.knowledge_modules_button.pack()
+        self.knowledge_modules_button = ctk.CTkButton(master, text="Knowledge Modules", command=self.open_knowledge_modules)
+        self.knowledge_modules_button.pack(pady=5)
 
-        self.glossary_button = Button(master, text="Glossary", command=self.open_glossary, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
-        self.glossary_button.pack()
+        self.glossary_button = ctk.CTkButton(master, text="Glossary", command=self.open_glossary)
+        self.glossary_button.pack(pady=5)
 
-        self.flashcards_button = Button(master, text="Flashcards", command=self.open_flashcards, bg="#333333", fg="#f0f0f0", activebackground="#444444", activeforeground="#ffffff")
-        self.flashcards_button.pack()
+        self.flashcards_button = ctk.CTkButton(master, text="Flashcards", command=self.open_flashcards)
+        self.flashcards_button.pack(pady=5)
 
     def clear_view(self):
         if self.current_view:
@@ -54,6 +55,6 @@ class MainWindow:
         self.current_view.pack(fill='both', expand=True)
 
 if __name__ == "__main__":
-    root = Tk()
+    root = ctk.CTk()
     main_window = MainWindow(root)
     root.mainloop()
