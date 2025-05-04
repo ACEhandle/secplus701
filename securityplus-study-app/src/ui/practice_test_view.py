@@ -1,11 +1,15 @@
+import os
 from tkinter import Frame, Label, Button, Listbox, Scrollbar, messagebox, StringVar, OptionMenu, Toplevel
 from modules.practice_tests import PracticeTests
+
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 class PracticeTestView(Frame):
     def __init__(self, master):
         super().__init__(master, bg="#222222")
         self.master = master
-        self.practice_tests = PracticeTests("src/data/questions.json")
+        questions_path = os.path.join(DATA_DIR, "questions.json")
+        self.practice_tests = PracticeTests(questions_path)
         self.current_question_index = 0
         self.user_answers = []
         self.questions = []

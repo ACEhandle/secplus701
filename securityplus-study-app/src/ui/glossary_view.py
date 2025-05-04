@@ -1,5 +1,8 @@
 from tkinter import Frame, Label, Listbox, Scrollbar, StringVar, Tk, END
 import json
+import os
+
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 class GlossaryView(Frame):
     def __init__(self, master=None):
@@ -26,14 +29,14 @@ class GlossaryView(Frame):
         self.definition_label.pack(pady=10)
 
     def load_glossary(self):
-        with open('src/data/glossary.json', 'r') as file:
+        with open(os.path.join(DATA_DIR, 'glossary.json'), 'r') as file:
             glossary_data = json.load(file)
             for term in glossary_data:
                 self.glossary_list.insert(END, term)
 
     def show_definition(self, event):
         selected_term = self.glossary_list.get(self.glossary_list.curselection())
-        with open('src/data/glossary.json', 'r') as file:
+        with open(os.path.join(DATA_DIR, 'glossary.json'), 'r') as file:
             glossary_data = json.load(file)
             definition = glossary_data[selected_term]
             self.definition_label.config(text=definition)

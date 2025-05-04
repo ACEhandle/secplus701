@@ -1,5 +1,8 @@
 from tkinter import Frame, Label, Text, Scrollbar, VERTICAL, RIGHT, Y
 import json
+import os
+
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 class KnowledgeModuleView(Frame):
     def __init__(self, master=None):
@@ -20,7 +23,7 @@ class KnowledgeModuleView(Frame):
         self.scrollbar.config(command=self.text_area.yview)
 
     def load_knowledge_modules(self):
-        with open('src/data/modules.json', 'r') as file:
+        with open(os.path.join(DATA_DIR, 'modules.json'), 'r') as file:
             modules = json.load(file)
             for module in modules:
                 self.text_area.insert('end', f"{module['title']}\n{module['content']}\n\n")
