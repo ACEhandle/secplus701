@@ -64,6 +64,13 @@ class PracticeTestView(ctk.CTkFrame):
             self.show_error("Error", "No questions found for this selection.")
             self.setup_selection_screen()
             return
+        # Shuffle options ONCE per test and store them for each question
+        self.shuffled_options_per_question = []
+        import random
+        for q in self.questions:
+            options = q['options'][:]
+            random.shuffle(options)
+            self.shuffled_options_per_question.append(options)
         self.setup_test_ui()
         self.load_question()
 
@@ -101,11 +108,9 @@ class PracticeTestView(ctk.CTkFrame):
             # Remove old radio buttons
             for widget in self.options_frame.winfo_children():
                 widget.destroy()
-            # Shuffle and display options as radio buttons
-            options = q['options'][:]
-            import random
-            random.shuffle(options)
-            self.shuffled_options = options  # Store for answer checking
+            # Use the pre-shuffled options for this question
+            options = self.shuffled_options_per_question[self.current_question_index]
+            self.shuffled_options = options
             # Restore previous answer if it exists
             prev_answer = self.user_answers[self.current_question_index] if len(self.user_answers) > self.current_question_index else ""
             self.selected_option.set(prev_answer)
@@ -133,10 +138,10 @@ class PracticeTestView(ctk.CTkFrame):
     def submit_answer(self):
         selected_answer = self.selected_option.get()
         if selected_answer:
-            if len(self.user_answers) <= self.current_question_index:
-                self.user_answers.append(selected_answer)
-            else:
-                self.user_answers[self.current_question_index] = selected_answer
+            # Ensure user_answers list is the same length as questions
+            while len(self.user_answers) < len(self.questions):
+                self.user_answers.append("")
+            self.user_answers[self.current_question_index] = selected_answer
             # Remove from passed_questions if it was passed before
             if self.current_question_index in self.passed_questions:
                 self.passed_questions.remove(self.current_question_index)
