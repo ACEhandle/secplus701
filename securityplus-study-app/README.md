@@ -1,68 +1,94 @@
-# Security Plus Study Application
+# SecurityPlus Study App
 
-This is a study application designed to help users prepare for the Security Plus Exam 701. The application includes practice tests, knowledge modules, and a glossary of terms to aid in studying.
+A modern, cross-platform desktop application for studying CompTIA Security+ (SY0-701) exam objectives. Built with Python and [customtkinter](https://github.com/TomSchimansky/CustomTkinter) for a sleek, user-friendly experience. Easily adaptable for other certifications (e.g., CCNA, DevNet) by swapping out data files.
 
 ## Features
 
-- **Practice Tests**: Users can take practice tests that simulate the exam environment. The application loads questions from a JSON file and evaluates user answers.
-  
-- **Knowledge Modules**: The application provides detailed knowledge modules related to the Security Plus exam, allowing users to study specific topics.
+- **Practice Tests:**
+  - Take module-based or full exam practice tests.
+  - ABCD-style radio button answer selection.
+  - Pass questions to revisit later; review passed questions in a focused mode.
+  - Progress bar and counters for answered and passed questions.
+  - Results with detailed explanations.
 
-- **Glossary**: A comprehensive glossary of terms is available, providing definitions and explanations for key concepts related to the exam.
+- **Knowledge Modules:**
+  - Browse exam domains/modules and their descriptions.
 
-## Project Structure
+- **Glossary:**
+  - Searchable glossary of key terms and definitions.
 
-```
-securityplus-study-app
-├── src
-│   ├── main.py
-│   ├── modules
-│   │   ├── practice_tests.py
-│   │   ├── knowledge_modules.py
-│   │   └── glossary.py
-│   ├── ui
-│   │   ├── main_window.py
-│   │   ├── practice_test_view.py
-│   │   ├── knowledge_module_view.py
-│   │   └── glossary_view.py
-│   └── data
-│       ├── questions.json
-│       ├── modules.json
-│       └── glossary.json
-├── requirements.txt
-└── README.md
-```
+- **Flashcards:**
+  - Randomized flashcard mode for rapid review of glossary terms.
 
-## Installation
-
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd securityplus-study-app
-   ```
-
-3. Install the required dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+- **Modern UI:**
+  - Built with customtkinter for a dark/light mode toggle, rounded corners, and a clean layout.
+  - Responsive design with side-by-side buttons and compact answer areas.
 
 ## Usage
 
-To run the application, execute the following command:
+1. **Install requirements:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the app:**
+   ```bash
+   python src/main.py
+   ```
+
+3. **Navigate the app:**
+   - Use the main menu to access Practice Tests, Knowledge Modules, Glossary, or Flashcards.
+   - Toggle light/dark mode with the switch in the top right.
+
+## Adapting for Other Certifications
+
+To use this app for another certification (e.g., CCNA, DevNet):
+
+1. **Create new data files** in `src/data/`:
+   - `questions_<cert>.json` — All practice questions for the new cert.
+   - `modules_<cert>.json` — Module/domain descriptions for the new cert.
+   - `glossary_<cert>.json` — Glossary terms for the new cert.
+
+2. **Update the code** to reference the new data files (or add a selector for multiple certifications).
+
+3. **(Optional) Customize UI labels** to reflect the new certification.
+
+## File Structure
+
 ```
-python src/main.py
+securityplus-study-app/
+├── README.md
+├── requirements.txt
+└── src/
+    ├── main.py
+    ├── data/
+    │   ├── questions_secplus.json
+    │   ├── modules_secplus.json
+    │   └── glossary_secplus.json
+    ├── modules/
+    │   ├── practice_tests.py
+    │   ├── knowledge_modules.py
+    │   └── glossary.py
+    └── ui/
+        ├── main_window.py
+        ├── practice_test_view.py
+        ├── knowledge_module_view.py
+        ├── glossary_view.py
+        └── flashcards_view.py
 ```
 
-This will launch the Tkinter application, where you can navigate through the practice tests, knowledge modules, and glossary.
+## Requirements
+- Python 3.8+
+- customtkinter
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+Install dependencies with:
+```
+pip install -r requirements.txt
+```
 
 ## License
+MIT License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+---
+
+*This app is not affiliated with CompTIA or any certification body. For educational use only.*
