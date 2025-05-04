@@ -65,13 +65,13 @@ class PracticeTestView(ctk.CTkFrame):
 
     def setup_test_ui(self):
         self.question_label = ctk.CTkLabel(self, text="", wraplength=700)
-        self.question_label.pack(pady=20)
+        self.question_label.pack(pady=(10, 5))  # Reduce vertical padding
         # Frame for answer options
         self.options_frame = ctk.CTkFrame(self)
-        self.options_frame.pack(pady=10, fill='x', padx=20)
+        self.options_frame.pack(pady=(0, 5), fill='x', padx=20)  # Reduce vertical padding
         self.selected_option = ctk.StringVar()
         button_frame = ctk.CTkFrame(self)
-        button_frame.pack(pady=10)
+        button_frame.pack(pady=(0, 5))  # Reduce vertical padding
         self.submit_button = ctk.CTkButton(button_frame, text="Submit Answer", command=self.submit_answer)
         self.submit_button.pack(side="left", padx=5)
         self.pass_button = ctk.CTkButton(button_frame, text="Pass", command=self.pass_question)
@@ -83,11 +83,11 @@ class PracticeTestView(ctk.CTkFrame):
         self.result_button = ctk.CTkButton(button_frame, text="View Results", command=self.view_results)
         self.result_button.pack(side="left", padx=5)
         self.progress_bar = ctk.CTkProgressBar(self, width=600)
-        self.progress_bar.pack(pady=5)
+        self.progress_bar.pack(pady=(0, 2))  # Reduce vertical padding
         self.progress_label = ctk.CTkLabel(self, text="")
         self.progress_label.pack(pady=(0, 0))
         self.passed_label = ctk.CTkLabel(self, text="")
-        self.passed_label.pack(pady=(0, 15))
+        self.passed_label.pack(pady=(0, 10))  # Reduce vertical padding
         self.update_progress_bar()
 
     def load_question(self):
