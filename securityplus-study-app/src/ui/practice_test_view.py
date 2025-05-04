@@ -68,21 +68,30 @@ class PracticeTestView(ctk.CTkFrame):
         self.question_label.pack(pady=20)
         self.answer_listbox = ctk.CTkTextbox(self, width=600, height=120)
         self.answer_listbox.pack(pady=10, fill='x', padx=20)
-        self.submit_button = ctk.CTkButton(self, text="Submit Answer", command=self.submit_answer)
-        self.submit_button.pack(pady=10)
-        self.pass_button = ctk.CTkButton(self, text="Pass", command=self.pass_question)
-        self.pass_button.pack(pady=10)
-        self.back_button = ctk.CTkButton(self, text="Back", command=self.back_question)
-        self.back_button.pack(pady=10)
-        self.review_passed_button = ctk.CTkButton(self, text="Review Passed", command=self.review_passed_questions)
-        self.review_passed_button.pack(pady=10)
-        self.result_button = ctk.CTkButton(self, text="View Results", command=self.view_results)
-        self.result_button.pack(pady=10)
+        # Create a frame for the buttons, arrange them side by side
+        button_frame = ctk.CTkFrame(self)
+        button_frame.pack(pady=10)
+        self.submit_button = ctk.CTkButton(button_frame, text="Submit Answer", command=self.submit_answer)
+        self.submit_button.pack(side="left", padx=5)
+        self.pass_button = ctk.CTkButton(button_frame, text="Pass", command=self.pass_question)
+        self.pass_button.pack(side="left", padx=5)
+        self.back_button = ctk.CTkButton(button_frame, text="Back", command=self.back_question)
+        self.back_button.pack(side="left", padx=5)
+        self.review_passed_button = ctk.CTkButton(button_frame, text="Review Passed", command=self.review_passed_questions)
+        self.review_passed_button.pack(side="left", padx=5)
+        self.result_button = ctk.CTkButton(button_frame, text="View Results", command=self.view_results)
+        self.result_button.pack(side="left", padx=5)
+        # Add a progress bar below the buttons
+        self.progress_bar = ctk.CTkProgressBar(self, width=600)
+        self.progress_bar.pack(pady=5)
+        self.progress_label = ctk.CTkLabel(self, text="")
+        self.progress_label.pack(pady=(0, 15))
+        self.update_progress_bar()
 
     def load_question(self):
         if self.current_question_index < len(self.questions):
             q = self.questions[self.current_question_index]
-            self.question_label.config(text=q['question'])
+            self.question_label.configure(text=q['question'])
             self.answer_listbox.delete("1.0", "end")
             # Shuffle options for each question display
             options = q['options'][:]
@@ -91,8 +100,15 @@ class PracticeTestView(ctk.CTkFrame):
             self.shuffled_options = options  # Store for answer checking
             for answer in options:
                 self.answer_listbox.insert("end", answer + "\n")
+            self.update_progress_bar()
         else:
             self.show_info("Info", "No more questions available.")
+
+    def update_progress_bar(self):
+        total = len(self.questions) if self.questions else 1
+        answered = min(self.current_question_index + 1, total)
+        self.progress_bar.set(answered / total)
+        self.progress_label.configure(text=f"{answered} / {total} answered")
 
     def submit_answer(self):
         selected_answer = self.answer_listbox.get("1.0", "end").strip()
