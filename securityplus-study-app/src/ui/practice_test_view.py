@@ -127,9 +127,11 @@ class PracticeTestView(Frame):
         self.show_detailed_results(results)
 
     def show_detailed_results(self, results):
-        result_win = Toplevel(self)
+        result_win = Toplevel(self.master)
         result_win.title("Test Results")
         result_win.configure(bg="#222222")
+        result_win.transient(self.master)
+        result_win.grab_set()
         Label(result_win, text=f"Score: {results['correct']} / {results['total']}", bg="#222222", fg="#f0f0f0", font=("Helvetica", 14)).pack(pady=10)
         for detail in results['details']:
             if not detail['is_correct']:
