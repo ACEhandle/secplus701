@@ -17,6 +17,8 @@ class PracticeTestView(ctk.CTkFrame):
         self.selection_var = ctk.StringVar()
         self.selection_var.set("")
         self.passed_questions = []
+        self.in_review_passed_mode = False
+        self.review_passed_index = 0
         self.setup_selection_screen()
 
     def setup_selection_screen(self):
@@ -52,6 +54,8 @@ class PracticeTestView(ctk.CTkFrame):
         self.current_question_index = 0
         self.user_answers = []
         self.passed_questions = []
+        self.in_review_passed_mode = False
+        self.review_passed_index = 0
         if self.test_type.get() == "Module":
             self.questions = self.practice_tests.load_module_questions(self.selection_var.get())
         else:
@@ -153,23 +157,40 @@ class PracticeTestView(ctk.CTkFrame):
             self.next_question()
 
     def back_question(self):
-        if self.current_question_index > 0:
-            self.current_question_index -= 1
-            self.load_question()
+        if self.in_review_passed_mode:
+            if self.review_passed_index > 0:
+                self.review_passed_index -= 1
+                self.current_question_index = self.passed_questions[self.review_passed_index]
+                self.load_question()
+        else:
+            if self.current_question_index > 0:
+                self.current_question_index -= 1
+                self.load_question()
 
     def review_passed_questions(self):
         if self.passed_questions:
-            self.current_question_index = self.passed_questions[0]
+            self.in_review_passed_mode = True
+            self.review_passed_index = 0
+            self.current_question_index = self.passed_questions[self.review_passed_index]
             self.load_question()
         else:
             self.show_info("Info", "No passed questions to review.")
 
     def next_question(self):
-        if self.current_question_index < len(self.questions) - 1:
-            self.current_question_index += 1
-            self.load_question()
+        if self.in_review_passed_mode:
+            if self.review_passed_index < len(self.passed_questions) - 1:
+                self.review_passed_index += 1
+                self.current_question_index = self.passed_questions[self.review_passed_index]
+                self.load_question()
+            else:
+                self.in_review_passed_mode = False
+                self.show_info("Info", "Finished reviewing passed questions. Returning to main test.")
         else:
-            self.show_info("Info", "This is the last question.")
+            if self.current_question_index < len(self.questions) - 1:
+                self.current_question_index += 1
+                self.load_question()
+            else:
+                self.show_info("Info", "This is the last question.")
 
     def view_results(self):
         results = self.practice_tests.evaluate_answers(self.user_answers)
