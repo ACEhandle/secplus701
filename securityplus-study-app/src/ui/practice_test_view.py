@@ -106,7 +106,9 @@ class PracticeTestView(ctk.CTkFrame):
             import random
             random.shuffle(options)
             self.shuffled_options = options  # Store for answer checking
-            self.selected_option.set("")
+            # Restore previous answer if it exists
+            prev_answer = self.user_answers[self.current_question_index] if len(self.user_answers) > self.current_question_index else ""
+            self.selected_option.set(prev_answer)
             abcd = ['A', 'B', 'C', 'D', 'E', 'F']
             for idx, answer in enumerate(options):
                 ctk.CTkRadioButton(
