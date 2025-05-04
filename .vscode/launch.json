@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run SecurityPlus App",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/securityplus-study-app/src/main.py"
+        }
+    ]
+}
