@@ -107,7 +107,7 @@
         "question": "Which of the following is a benefit of using a security framework?",
         "options": ["Provides a structured approach to security", "Improves risk management", "Enhances compliance", "Facilitates security training"],
         "answer": "Provides a structured approach to security",
-        "explanation": "Security frameworks help organizations implement and manage security in a structured way."
+        "explanation": "A security framework offers a structured and repeatable approach to implementing and managing security controls, which is its primary benefit."
       },
       {
         "question": "What is the main function of a security operations center (SOC)?",
@@ -300,16 +300,16 @@
         "explanation": "Load balancers distribute traffic to improve performance and availability."
       },
       {
-        "question": "Which of the following is a benefit of using cloud-based security solutions?",
+        "question": "Which of the following is the PRIMARY benefit of using cloud-based security solutions?",
         "options": ["Scalability and flexibility", "Centralized management", "Rapid deployment", "Automatic updates"],
         "answer": "Scalability and flexibility",
-        "explanation": "Cloud-based security solutions offer scalability and flexibility for organizations."
+        "explanation": "The primary benefit of cloud-based security solutions is their scalability and flexibility, allowing organizations to quickly adapt to changing needs and workloads, which is more difficult with traditional on-premises solutions."
       },
       {
-        "question": "Which of the following is a benefit of using network segmentation?",
+        "question": "Which of the following is the PRIMARY benefit of using network segmentation?",
         "options": ["Limits lateral movement of attackers", "Improves incident containment", "Enables granular access control", "Facilitates compliance with regulations"],
         "answer": "Limits lateral movement of attackers",
-        "explanation": "Network segmentation limits the ability of attackers to move laterally within a network."
+        "explanation": "The primary benefit of network segmentation is that it limits the lateral movement of attackers within a network, reducing the potential impact of a breach."
       },
       {
         "question": "What is the primary function of a network firewall?",
@@ -321,7 +321,7 @@
         "question": "Which of the following is a key benefit of using a proxy server?",
         "options": ["Provides anonymity for users", "Enables content filtering", "Prevents direct access to internal resources", "Caches web content for performance"],
         "answer": "Provides anonymity for users",
-        "explanation": "Proxy servers can mask user IP addresses, providing anonymity."
+        "explanation": "A key benefit of a proxy server is that it can mask user IP addresses, providing anonymity when accessing external resources."
       },
       {
         "question": "What is the main purpose of a security baseline?",
@@ -330,10 +330,10 @@
         "explanation": "Security baselines define the minimum acceptable security configuration."
       },
       {
-        "question": "Which of the following is a benefit of using a VPN?",
+        "question": "Which of the following is the PRIMARY benefit of using a VPN?",
         "options": ["Encrypts data in transit", "Provides secure remote access", "Masks user IP address", "Bypasses geographic restrictions"],
         "answer": "Encrypts data in transit",
-        "explanation": "VPNs encrypt data as it travels over public networks, protecting confidentiality."
+        "explanation": "The primary benefit of a VPN is encrypting data as it travels over public networks, ensuring confidentiality and security."
       },
       {
         "question": "Which of the following is a benefit of using a demilitarized zone (DMZ)?",
@@ -360,10 +360,10 @@
         "explanation": "A bastion host is a hardened system that acts as a gateway between an internal network and external networks."
       },
       {
-        "question": "Which of the following is a benefit of using cloud computing for disaster recovery?",
+        "question": "Which of the following is the PRIMARY benefit of using cloud computing for disaster recovery, compared to traditional on-premises solutions?",
         "options": ["Rapid scalability", "Geographic redundancy", "Automated failover", "On-demand resource allocation"],
-        "answer": "Rapid scalability",
-        "explanation": "Cloud computing allows rapid scaling of resources, which is beneficial for disaster recovery."
+        "answer": "Geographic redundancy",
+        "explanation": "The primary benefit of cloud computing for disaster recovery is geographic redundancy, allowing data and services to be replicated across multiple locations, which is more difficult and expensive to achieve with traditional on-premises solutions."
       }
     ],
     "Security Operations": [
