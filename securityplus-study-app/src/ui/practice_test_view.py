@@ -35,12 +35,17 @@ class PracticeTestView(Frame):
             self.option_menu.destroy()
         if self.test_type.get() == "Module":
             options = self.practice_tests.get_available_modules()
+            if options:
+                self.selection_var.set(options[0])
+                self.option_menu = OptionMenu(self, self.selection_var, *options)
+                self.option_menu.pack(pady=5)
+            else:
+                self.selection_var.set("")
+                self.option_menu = None
         else:
-            options = self.practice_tests.get_available_exams()
-        if options:
-            self.selection_var.set(options[0])
-        self.option_menu = OptionMenu(self, self.selection_var, *options)
-        self.option_menu.pack(pady=5)
+            # For Full Exam, no selection needed
+            self.selection_var.set("")
+            self.option_menu = None
 
     def start_test(self):
         for widget in self.winfo_children():
@@ -51,8 +56,7 @@ class PracticeTestView(Frame):
         if self.test_type.get() == "Module":
             self.questions = self.practice_tests.load_module_questions(self.selection_var.get())
         else:
-            exam_index = self.practice_tests.get_available_exams().index(self.selection_var.get())
-            self.questions = self.practice_tests.load_full_exam(exam_index)
+            self.questions = self.practice_tests.load_full_exam()
         if not self.questions:
             messagebox.showerror("Error", "No questions found for this selection.")
             self.setup_selection_screen()
@@ -81,7 +85,12 @@ class PracticeTestView(Frame):
             q = self.questions[self.current_question_index]
             self.question_label.config(text=q['question'])
             self.answer_listbox.delete(0, 'end')
-            for answer in q['options']:
+            # Shuffle options for each question display
+            options = q['options'][:]
+            import random
+            random.shuffle(options)
+            self.shuffled_options = options  # Store for answer checking
+            for answer in options:
                 self.answer_listbox.insert('end', answer)
         else:
             messagebox.showinfo("Info", "No more questions available.")

@@ -39,7 +39,7 @@
       },
       {
         "question": "What is the primary purpose of a digital signature?",
-        "options": ["To provide non-repudiation", "To encrypt data", "To compress files", "To increase bandwidth"],
+        "options": ["To provide non-repudiation", "To ensure data integrity", "To authenticate sender identity", "To encrypt email contents"],
         "answer": "To provide non-repudiation",
         "explanation": "Digital signatures provide non-repudiation, ensuring the sender cannot deny sending the message."
       },
@@ -51,7 +51,7 @@
       },
       {
         "question": "What is the main function of a Public Key Infrastructure (PKI)?",
-        "options": ["To manage digital certificates", "To monitor network traffic", "To block malware", "To store passwords"],
+        "options": ["To manage digital certificates", "To issue and revoke public keys", "To provide key escrow services", "To enable secure email communication"],
         "answer": "To manage digital certificates",
         "explanation": "PKI is used to manage, distribute, and verify digital certificates for secure communications."
       },
@@ -75,13 +75,13 @@
       },
       {
         "question": "Which of the following is a benefit of using encryption?",
-        "options": ["Protects data confidentiality", "Increases network speed", "Reduces hardware costs", "Improves wireless range"],
+        "options": ["Protects data confidentiality", "Ensures data authenticity", "Prevents unauthorized modification", "Enables secure key exchange"],
         "answer": "Protects data confidentiality",
         "explanation": "Encryption protects the confidentiality of data by making it unreadable to unauthorized users."
       },
       {
         "question": "What is the main function of a security awareness program?",
-        "options": ["To educate users about security risks and best practices", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To educate users about security risks and best practices", "To reduce the risk of social engineering attacks", "To improve compliance with security policies", "To increase user accountability"],
         "answer": "To educate users about security risks and best practices",
         "explanation": "Security awareness programs help users recognize and avoid security threats."
       },
@@ -99,19 +99,19 @@
       },
       {
         "question": "What is the primary purpose of a security policy?",
-        "options": ["To define rules and expectations for security", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To define rules and expectations for security", "To establish acceptable use guidelines", "To outline incident response procedures", "To assign security responsibilities"],
         "answer": "To define rules and expectations for security",
         "explanation": "Security policies set the rules and expectations for protecting information and systems."
       },
       {
         "question": "Which of the following is a benefit of using a security framework?",
-        "options": ["Provides a structured approach to security", "Increases wireless range", "Reduces hardware costs", "Blocks all incoming traffic"],
+        "options": ["Provides a structured approach to security", "Improves risk management", "Enhances compliance", "Facilitates security training"],
         "answer": "Provides a structured approach to security",
         "explanation": "Security frameworks help organizations implement and manage security in a structured way."
       },
       {
         "question": "What is the main function of a security operations center (SOC)?",
-        "options": ["To monitor and respond to security incidents", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To monitor and respond to security incidents", "To analyze security trends", "To coordinate incident response", "To manage security tools"],
         "answer": "To monitor and respond to security incidents",
         "explanation": "A SOC is responsible for monitoring, detecting, and responding to security incidents."
       },
@@ -125,9 +125,9 @@
     "Threats, Vulnerabilities, and Mitigations": [
       {
         "question": "Which type of malware is designed to provide unauthorized remote access to a compromised system?",
-        "options": ["Rootkit", "Remote Access Trojan (RAT)", "Keylogger", "Spyware"],
-        "answer": "Rootkit",
-        "explanation": "Rootkits allow attackers to maintain privileged access to a system while hiding their presence."
+        "options": ["Remote Access Trojan (RAT)", "Rootkit", "Keylogger", "Backdoor"],
+        "answer": "Remote Access Trojan (RAT)",
+        "explanation": "RATs are specifically designed to provide remote access and control over a compromised system."
       },
       {
         "question": "What is the primary goal of a phishing attack?",
@@ -155,73 +155,73 @@
       },
       {
         "question": "Which of the following is a common method to mitigate SQL injection attacks?",
-        "options": ["Input validation", "Disabling firewalls", "Using weak passwords", "Allowing anonymous access"],
-        "answer": "Input validation",
-        "explanation": "Input validation ensures that user input is checked and sanitized, preventing SQL injection."
+        "options": ["Parameterized queries", "Input validation", "Escaping user input", "Web application firewall"],
+        "answer": "Parameterized queries",
+        "explanation": "Parameterized queries prevent attackers from injecting malicious SQL code."
       },
       {
         "question": "What is the primary risk of using outdated software?",
-        "options": ["Unpatched vulnerabilities", "Faster performance", "Lower costs", "Improved compatibility"],
+        "options": ["Unpatched vulnerabilities", "Compatibility issues", "Performance degradation", "Lack of vendor support"],
         "answer": "Unpatched vulnerabilities",
         "explanation": "Outdated software may have known vulnerabilities that can be exploited by attackers."
       },
       {
         "question": "Which of the following is a social engineering attack that targets a specific individual or organization?",
-        "options": ["Spear phishing", "Vishing", "Whaling", "Pharming"],
+        "options": ["Spear phishing", "Whaling", "Business Email Compromise (BEC)", "Pretexting"],
         "answer": "Spear phishing",
         "explanation": "Spear phishing targets specific individuals or organizations with tailored messages."
       },
       {
         "question": "What is the main purpose of a vulnerability assessment?",
-        "options": ["To identify security weaknesses", "To encrypt data", "To monitor network traffic", "To block malware"],
+        "options": ["To identify security weaknesses", "To prioritize remediation efforts", "To evaluate risk exposure", "To improve security posture"],
         "answer": "To identify security weaknesses",
         "explanation": "A vulnerability assessment identifies and evaluates security weaknesses in systems."
       },
       {
         "question": "Which of the following is an example of a blended threat?",
-        "options": ["A worm that installs a backdoor and sends spam", "A firewall", "A password policy", "A security camera"],
-        "answer": "A worm that installs a backdoor and sends spam",
-        "explanation": "Blended threats combine multiple attack methods, such as worms, backdoors, and spam."
+        "options": ["A worm that installs a backdoor and spreads ransomware", "A phishing email with a malicious link", "A virus that disables antivirus software", "A trojan that exfiltrates data"],
+        "answer": "A worm that installs a backdoor and spreads ransomware",
+        "explanation": "Blended threats combine multiple attack methods, such as worms, backdoors, and ransomware."
       },
       {
         "question": "Which of the following is a common method used in privilege escalation attacks?",
-        "options": ["Exploiting software vulnerabilities", "Using strong passwords", "Implementing firewalls", "Enabling logging"],
+        "options": ["Exploiting software vulnerabilities", "Abusing weak file permissions", "Using default credentials", "DLL injection"],
         "answer": "Exploiting software vulnerabilities",
         "explanation": "Attackers often exploit unpatched vulnerabilities to gain higher privileges."
       },
       {
         "question": "What is the main goal of a ransomware attack?",
-        "options": ["To extort money by encrypting data", "To monitor network traffic", "To increase bandwidth", "To provide free software"],
+        "options": ["To extort money by encrypting data", "To disrupt operations", "To steal sensitive information", "To gain unauthorized access"],
         "answer": "To extort money by encrypting data",
         "explanation": "Ransomware encrypts data and demands payment for decryption."
       },
       {
         "question": "Which of the following is a sign of a phishing attempt?",
-        "options": ["Urgent request for personal information", "Well-written company policy", "Encrypted email", "Regular software update"],
+        "options": ["Urgent request for personal information", "Unusual sender address", "Suspicious attachments", "Generic greeting"],
         "answer": "Urgent request for personal information",
         "explanation": "Phishing emails often use urgency to trick users into revealing sensitive information."
       },
       {
         "question": "What is a common mitigation for brute force attacks?",
-        "options": ["Account lockout policies", "Disabling firewalls", "Using default passwords", "Allowing anonymous access"],
+        "options": ["Account lockout policies", "Rate limiting", "Strong password requirements", "Multi-factor authentication"],
         "answer": "Account lockout policies",
         "explanation": "Account lockout policies prevent repeated login attempts, mitigating brute force attacks."
       },
       {
         "question": "Which of the following is an example of a physical attack vector?",
-        "options": ["Tailgating", "SQL injection", "Phishing", "DNS poisoning"],
+        "options": ["Tailgating", "Dumpster diving", "Shoulder surfing", "Unauthorized access to hardware"],
         "answer": "Tailgating",
         "explanation": "Tailgating is a physical attack where an unauthorized person follows an authorized person into a secure area."
       },
       {
         "question": "Which of the following is a common method to prevent cross-site scripting (XSS) attacks?",
-        "options": ["Input validation and output encoding", "Disabling firewalls", "Using weak passwords", "Allowing anonymous access"],
+        "options": ["Input validation and output encoding", "Content security policies", "Sanitizing user input", "Using secure coding practices"],
         "answer": "Input validation and output encoding",
         "explanation": "Input validation and output encoding prevent malicious scripts from being executed in the browser."
       },
       {
         "question": "What is the primary risk of using shared accounts?",
-        "options": ["Lack of accountability", "Faster performance", "Lower costs", "Improved compatibility"],
+        "options": ["Lack of accountability", "Difficulty in auditing", "Increased risk of compromise", "Reduced access control"],
         "answer": "Lack of accountability",
         "explanation": "Shared accounts make it difficult to determine who performed specific actions."
       },
@@ -233,13 +233,13 @@
       },
       {
         "question": "What is the main purpose of penetration testing?",
-        "options": ["To identify exploitable vulnerabilities", "To encrypt data", "To monitor network traffic", "To block malware"],
+        "options": ["To identify exploitable vulnerabilities", "To simulate real-world attacks", "To validate security controls", "To improve security posture"],
         "answer": "To identify exploitable vulnerabilities",
         "explanation": "Penetration testing simulates attacks to find vulnerabilities that could be exploited."
       },
       {
         "question": "Which of the following is an example of a logic bomb?",
-        "options": ["Malicious code that triggers on a specific date", "A firewall", "A password policy", "A security camera"],
+        "options": ["Malicious code that triggers on a specific date", "A script that deletes files under certain conditions", "A program that disables security controls", "A virus that spreads through email attachments"],
         "answer": "Malicious code that triggers on a specific date",
         "explanation": "A logic bomb is code that executes a malicious function when certain conditions are met."
       }
@@ -253,13 +253,13 @@
       },
       {
         "question": "Which of the following is a security benefit of network segmentation?",
-        "options": ["Improved performance", "Reduced attack surface", "Lower hardware costs", "Increased wireless range"],
-        "answer": "Reduced attack surface",
+        "options": ["Reduces attack surface", "Facilitates incident containment", "Enables granular access control", "Improves network visibility"],
+        "answer": "Reduces attack surface",
         "explanation": "Network segmentation reduces the attack surface by isolating sensitive systems and limiting lateral movement."
       },
       {
         "question": "What is the main purpose of a DMZ (Demilitarized Zone) in network architecture?",
-        "options": ["To store sensitive data", "To isolate public-facing services from the internal network", "To increase wireless coverage", "To encrypt all network traffic"],
+        "options": ["To isolate public-facing services from the internal network", "To provide a buffer zone for external services", "To allow secure remote access", "To host honeypots for threat analysis"],
         "answer": "To isolate public-facing services from the internal network",
         "explanation": "A DMZ is used to isolate public-facing services from the internal network, adding an extra layer of security."
       },
@@ -271,97 +271,97 @@
       },
       {
         "question": "What is the primary function of a proxy server?",
-        "options": ["To encrypt data", "To filter and forward requests between clients and servers", "To store backup data", "To manage user accounts"],
+        "options": ["To filter and forward requests between clients and servers", "To provide web content caching", "To enforce content filtering policies", "To anonymize user traffic"],
         "answer": "To filter and forward requests between clients and servers",
         "explanation": "A proxy server filters and forwards requests between clients and servers, often providing security and caching."
       },
       {
         "question": "Which of the following is a benefit of using VLANs in network design?",
-        "options": ["Segmentation of network traffic", "Increased wireless range", "Lower hardware costs", "Faster internet speeds"],
+        "options": ["Segmentation of network traffic", "Isolation of sensitive devices", "Reduction of broadcast domains", "Improved network management"],
         "answer": "Segmentation of network traffic",
         "explanation": "VLANs allow logical segmentation of network traffic, improving security and performance."
       },
       {
         "question": "What is the main purpose of a honeynet?",
-        "options": ["To attract and analyze multiple attackers", "To store sensitive data", "To increase bandwidth", "To block phishing emails"],
+        "options": ["To attract and analyze multiple attackers", "To detect lateral movement", "To collect threat intelligence", "To divert attackers from production systems"],
         "answer": "To attract and analyze multiple attackers",
         "explanation": "A honeynet is a network of honeypots designed to attract and study attackers."
       },
       {
         "question": "Which of the following is a key benefit of using a demilitarized zone (DMZ)?",
-        "options": ["Isolates public services from the internal network", "Increases wireless range", "Reduces encryption overhead", "Blocks all incoming traffic"],
+        "options": ["Isolates public services from the internal network", "Limits exposure of internal resources", "Facilitates secure external access", "Improves monitoring of external traffic"],
         "answer": "Isolates public services from the internal network",
         "explanation": "A DMZ isolates public-facing services, reducing risk to the internal network."
       },
       {
         "question": "What is the primary function of a load balancer in security architecture?",
-        "options": ["Distributes network traffic across multiple servers", "Encrypts all data", "Blocks malware", "Manages user accounts"],
+        "options": ["Distributes network traffic across multiple servers", "Improves application availability", "Enhances fault tolerance", "Facilitates resource optimization"],
         "answer": "Distributes network traffic across multiple servers",
         "explanation": "Load balancers distribute traffic to improve performance and availability."
       },
       {
         "question": "Which of the following is a benefit of using cloud-based security solutions?",
-        "options": ["Scalability and flexibility", "Increased physical security", "Lower wireless interference", "Manual backups"],
+        "options": ["Scalability and flexibility", "Centralized management", "Rapid deployment", "Automatic updates"],
         "answer": "Scalability and flexibility",
         "explanation": "Cloud-based security solutions offer scalability and flexibility for organizations."
       },
       {
         "question": "Which of the following is a benefit of using network segmentation?",
-        "options": ["Limits lateral movement of attackers", "Increases wireless range", "Reduces encryption overhead", "Blocks all incoming traffic"],
+        "options": ["Limits lateral movement of attackers", "Improves incident containment", "Enables granular access control", "Facilitates compliance with regulations"],
         "answer": "Limits lateral movement of attackers",
         "explanation": "Network segmentation limits the ability of attackers to move laterally within a network."
       },
       {
         "question": "What is the primary function of a network firewall?",
-        "options": ["To control incoming and outgoing network traffic", "To store backup data", "To increase bandwidth", "To manage user accounts"],
+        "options": ["To control incoming and outgoing network traffic", "To enforce security policies", "To block unauthorized access", "To monitor network activity"],
         "answer": "To control incoming and outgoing network traffic",
         "explanation": "Firewalls control traffic based on predetermined security rules."
       },
       {
         "question": "Which of the following is a key benefit of using a proxy server?",
-        "options": ["Provides anonymity for users", "Increases wireless range", "Reduces hardware costs", "Blocks all outgoing traffic"],
+        "options": ["Provides anonymity for users", "Enables content filtering", "Prevents direct access to internal resources", "Caches web content for performance"],
         "answer": "Provides anonymity for users",
         "explanation": "Proxy servers can mask user IP addresses, providing anonymity."
       },
       {
         "question": "What is the main purpose of a security baseline?",
-        "options": ["To establish minimum security standards", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To establish minimum security standards", "To define acceptable configurations", "To ensure compliance with policies", "To facilitate risk management"],
         "answer": "To establish minimum security standards",
         "explanation": "Security baselines define the minimum acceptable security configuration."
       },
       {
         "question": "Which of the following is a benefit of using a VPN?",
-        "options": ["Encrypts data in transit", "Increases wireless range", "Reduces hardware costs", "Blocks phishing emails"],
+        "options": ["Encrypts data in transit", "Provides secure remote access", "Masks user IP address", "Bypasses geographic restrictions"],
         "answer": "Encrypts data in transit",
         "explanation": "VPNs encrypt data as it travels over public networks, protecting confidentiality."
       },
       {
         "question": "Which of the following is a benefit of using a demilitarized zone (DMZ)?",
-        "options": ["Isolates public services from the internal network", "Increases wireless range", "Reduces encryption overhead", "Blocks all incoming traffic"],
+        "options": ["Isolates public services from the internal network", "Improves network security", "Facilitates secure communication", "Enhances monitoring capabilities"],
         "answer": "Isolates public services from the internal network",
         "explanation": "A DMZ isolates public-facing services, reducing risk to the internal network."
       },
       {
         "question": "What is the main purpose of a network access control (NAC) system?",
-        "options": ["To enforce security policies on devices before granting network access", "To encrypt wireless traffic", "To monitor network traffic", "To block phishing emails"],
+        "options": ["To enforce security policies on devices before granting network access", "To ensure device compliance", "To restrict unauthorized access", "To monitor network activity"],
         "answer": "To enforce security policies on devices before granting network access",
         "explanation": "NAC systems enforce security policies and check device compliance before allowing network access."
       },
       {
         "question": "Which of the following is a key benefit of using a reverse proxy?",
-        "options": ["Handles requests from clients on behalf of servers", "Increases wireless range", "Reduces hardware costs", "Blocks all outgoing traffic"],
+        "options": ["Handles requests from clients on behalf of servers", "Improves server performance", "Enhances security measures", "Facilitates load balancing"],
         "answer": "Handles requests from clients on behalf of servers",
         "explanation": "A reverse proxy handles requests from clients and forwards them to the appropriate server."
       },
       {
         "question": "What is the main function of a bastion host?",
-        "options": ["Acts as a hardened gateway", "Increases bandwidth", "Provides wireless access", "Encrypts all traffic"],
+        "options": ["Acts as a hardened gateway", "Provides secure remote access", "Facilitates network monitoring", "Hosts critical services in isolation"],
         "answer": "Acts as a hardened gateway",
         "explanation": "A bastion host is a hardened system that acts as a gateway between an internal network and external networks."
       },
       {
         "question": "Which of the following is a benefit of using cloud computing for disaster recovery?",
-        "options": ["Rapid scalability", "Lower latency", "Physical isolation", "Manual backups"],
+        "options": ["Rapid scalability", "Geographic redundancy", "Automated failover", "On-demand resource allocation"],
         "answer": "Rapid scalability",
         "explanation": "Cloud computing allows rapid scaling of resources, which is beneficial for disaster recovery."
       }
@@ -387,7 +387,7 @@
       },
       {
         "question": "What is the main goal of business continuity planning?",
-        "options": ["To increase profits", "To ensure critical operations continue during a disruption", "To reduce staff", "To encrypt all data"],
+        "options": ["To ensure critical operations continue during a disruption", "To minimize downtime and data loss", "To maintain customer trust during incidents", "To comply with regulatory requirements"],
         "answer": "To ensure critical operations continue during a disruption",
         "explanation": "Business continuity planning ensures that critical operations can continue during and after a disruption."
       },
@@ -399,13 +399,13 @@
       },
       {
         "question": "Which of the following is a key benefit of using endpoint detection and response (EDR) tools?",
-        "options": ["Real-time monitoring and response to threats", "Increased wireless range", "Lower hardware costs", "Manual backups"],
+        "options": ["Real-time monitoring and response to threats", "Automated threat containment", "Detailed forensic analysis", "Centralized endpoint visibility"],
         "answer": "Real-time monitoring and response to threats",
         "explanation": "EDR tools provide real-time monitoring and response to endpoint threats."
       },
       {
         "question": "What is the main purpose of a playbook in incident response?",
-        "options": ["To provide step-by-step procedures for handling incidents", "To encrypt data", "To increase profits", "To reduce staff"],
+        "options": ["To provide step-by-step procedures for handling incidents", "To ensure consistent response actions", "To reduce response time", "To document lessons learned"],
         "answer": "To provide step-by-step procedures for handling incidents",
         "explanation": "Playbooks provide detailed procedures for responding to specific types of incidents."
       },
@@ -417,73 +417,73 @@
       },
       {
         "question": "What is the primary purpose of a security information and event management (SIEM) system?",
-        "options": ["To collect, analyze, and correlate security events", "To increase wireless range", "To reduce staff", "To encrypt all data"],
+        "options": ["To collect, analyze, and correlate security events", "To improve threat detection", "To facilitate incident response", "To enhance compliance reporting"],
         "answer": "To collect, analyze, and correlate security events",
         "explanation": "SIEM systems help organizations detect and respond to security incidents."
       },
       {
         "question": "Which of the following is a key step in the disaster recovery process?",
-        "options": ["Restoring data from backups", "Increasing profits", "Reducing staff", "Encrypting all data"],
+        "options": ["Restoring data from backups", "Testing recovery procedures", "Identifying critical systems", "Documenting lessons learned"],
         "answer": "Restoring data from backups",
         "explanation": "Restoring data from backups is a critical step in disaster recovery."
       },
       {
         "question": "Which of the following is a key benefit of using centralized logging?",
-        "options": ["Easier incident detection and response", "Increased wireless range", "Lower hardware costs", "Manual backups"],
+        "options": ["Easier incident detection and response", "Consolidated log management", "Improved compliance reporting", "Faster forensic investigations"],
         "answer": "Easier incident detection and response",
         "explanation": "Centralized logging allows for faster detection and response to security incidents."
       },
       {
         "question": "What is the main purpose of a security operations center (SOC)?",
-        "options": ["To monitor and respond to security incidents", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To monitor and respond to security incidents", "To analyze security trends", "To coordinate incident response", "To manage security tools"],
         "answer": "To monitor and respond to security incidents",
         "explanation": "A SOC is responsible for monitoring, detecting, and responding to security incidents."
       },
       {
         "question": "Which of the following is an example of a corrective control?",
-        "options": ["Restoring data from backups", "Firewall", "Security camera", "Incident report"],
+        "options": ["Restoring data from backups", "Reconfiguring security settings", "Updating software patches", "Implementing new policies"],
         "answer": "Restoring data from backups",
         "explanation": "Corrective controls restore systems after an incident, such as restoring from backups."
       },
       {
         "question": "What is the primary purpose of a vulnerability management program?",
-        "options": ["To identify, assess, and remediate vulnerabilities", "To increase wireless range", "To reduce staff", "To encrypt all data"],
+        "options": ["To identify, assess, and remediate vulnerabilities", "To prioritize security efforts", "To improve risk management", "To enhance compliance"],
         "answer": "To identify, assess, and remediate vulnerabilities",
         "explanation": "Vulnerability management programs help organizations address security weaknesses."
       },
       {
         "question": "Which of the following is a key step in the patch management process?",
-        "options": ["Testing patches before deployment", "Increasing profits", "Reducing staff", "Encrypting all data"],
+        "options": ["Testing patches before deployment", "Documenting patch history", "Prioritizing critical updates", "Monitoring patch effectiveness"],
         "answer": "Testing patches before deployment",
         "explanation": "Testing patches ensures they do not introduce new issues before deployment."
       },
       {
         "question": "Which of the following is a key benefit of using a playbook in incident response?",
-        "options": ["Provides step-by-step procedures for handling incidents", "Increases wireless range", "Lowers hardware costs", "Manual backups"],
+        "options": ["Provides step-by-step procedures for handling incidents", "Ensures consistent response actions", "Reduces response time", "Improves post-incident analysis"],
         "answer": "Provides step-by-step procedures for handling incidents",
         "explanation": "Playbooks provide detailed procedures for responding to specific types of incidents."
       },
       {
         "question": "What is the main purpose of a security information and event management (SIEM) system?",
-        "options": ["To collect, analyze, and correlate security events", "To increase wireless range", "To reduce staff", "To encrypt all data"],
+        "options": ["To collect, analyze, and correlate security events", "To improve threat detection", "To facilitate incident response", "To enhance compliance reporting"],
         "answer": "To collect, analyze, and correlate security events",
         "explanation": "SIEM systems help organizations detect and respond to security incidents."
       },
       {
         "question": "Which of the following is an example of a detective control?",
-        "options": ["Intrusion detection system (IDS)", "Firewall", "Encryption", "Security policy"],
+        "options": ["Intrusion detection system (IDS)", "Log analysis tools", "Network monitoring systems", "Security event correlation"],
         "answer": "Intrusion detection system (IDS)",
         "explanation": "Detective controls like IDS identify and alert on suspicious activity after it occurs."
       },
       {
         "question": "What is the main goal of a post-incident review?",
-        "options": ["To identify lessons learned and improve future response", "To punish employees", "To increase profits", "To reduce staff"],
+        "options": ["To identify lessons learned and improve future response", "To refine incident response procedures", "To enhance security policies", "To document incident details"],
         "answer": "To identify lessons learned and improve future response",
         "explanation": "A post-incident review helps organizations learn from incidents and improve their response plans."
       },
       {
         "question": "Which of the following is a key benefit of using endpoint detection and response (EDR) tools?",
-        "options": ["Real-time monitoring and response to threats", "Increased wireless range", "Lower hardware costs", "Manual backups"],
+        "options": ["Real-time monitoring and response to threats", "Automated threat containment", "Detailed forensic analysis", "Centralized endpoint visibility"],
         "answer": "Real-time monitoring and response to threats",
         "explanation": "EDR tools provide real-time monitoring and response to endpoint threats."
       }
@@ -503,7 +503,7 @@
       },
       {
         "question": "What is the main purpose of a security policy?",
-        "options": ["To increase profits", "To provide guidelines for protecting assets", "To reduce staff", "To encrypt all data"],
+        "options": ["To provide guidelines for protecting assets", "To define acceptable use of resources", "To assign roles and responsibilities", "To outline disciplinary actions for violations"],
         "answer": "To provide guidelines for protecting assets",
         "explanation": "A security policy provides guidelines and rules for protecting an organization's assets."
       },
@@ -515,19 +515,19 @@
       },
       {
         "question": "What is the primary goal of compliance audits?",
-        "options": ["To punish employees", "To ensure adherence to laws and regulations", "To increase profits", "To reduce staff"],
+        "options": ["To ensure adherence to laws and regulations", "To identify gaps in security controls", "To verify compliance with industry standards", "To recommend improvements to policies"],
         "answer": "To ensure adherence to laws and regulations",
         "explanation": "Compliance audits ensure that organizations adhere to relevant laws and regulations."
       },
       {
         "question": "Which of the following is a primary purpose of a risk assessment?",
-        "options": ["To identify and evaluate potential threats and vulnerabilities", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To identify and evaluate potential threats and vulnerabilities", "To prioritize mitigation efforts", "To assess the impact of risks", "To develop a risk management plan"],
         "answer": "To identify and evaluate potential threats and vulnerabilities",
         "explanation": "Risk assessments help organizations understand and prioritize risks."
       },
       {
         "question": "What is the main purpose of a business impact analysis (BIA)?",
-        "options": ["To determine the effects of disruptions on business operations", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To determine the effects of disruptions on business operations", "To identify critical business functions", "To estimate recovery time objectives", "To prioritize recovery efforts"],
         "answer": "To determine the effects of disruptions on business operations",
         "explanation": "A BIA identifies critical functions and the impact of disruptions."
       },
@@ -539,25 +539,25 @@
       },
       {
         "question": "What is the primary purpose of user awareness training?",
-        "options": ["To educate users about security risks and best practices", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To educate users about security risks and best practices", "To reduce the likelihood of successful attacks", "To improve compliance with policies", "To foster a security-conscious culture"],
         "answer": "To educate users about security risks and best practices",
         "explanation": "User awareness training helps prevent social engineering and other user-targeted attacks."
       },
       {
         "question": "Which of the following is a key component of a security governance framework?",
-        "options": ["Policies and procedures", "Marketing strategy", "Sales targets", "Product development"],
+        "options": ["Policies and procedures", "Risk management processes", "Compliance monitoring", "Incident response planning"],
         "answer": "Policies and procedures",
         "explanation": "Policies and procedures are essential for effective security governance."
       },
       {
         "question": "Which of the following is a primary purpose of a security audit?",
-        "options": ["To evaluate the effectiveness of security controls", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To evaluate the effectiveness of security controls", "To identify gaps in security measures", "To verify compliance with standards", "To recommend improvements to policies"],
         "answer": "To evaluate the effectiveness of security controls",
         "explanation": "Security audits assess how well security controls are working."
       },
       {
         "question": "What is the main purpose of a security steering committee?",
-        "options": ["To provide strategic direction for the security program", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To provide strategic direction for the security program", "To prioritize security initiatives", "To allocate resources for security projects", "To review security policies"],
         "answer": "To provide strategic direction for the security program",
         "explanation": "A security steering committee sets the direction and priorities for security initiatives."
       },
@@ -569,25 +569,25 @@
       },
       {
         "question": "What is the primary purpose of a security policy review?",
-        "options": ["To ensure policies remain effective and up to date", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To ensure policies remain effective and up to date", "To identify gaps in security measures", "To verify compliance with standards", "To recommend improvements to policies"],
         "answer": "To ensure policies remain effective and up to date",
         "explanation": "Regular reviews keep security policies relevant and effective."
       },
       {
         "question": "Which of the following is a key component of a risk management framework?",
-        "options": ["Risk assessment", "Marketing strategy", "Sales targets", "Product development"],
+        "options": ["Risk assessment", "Risk mitigation strategies", "Risk monitoring processes", "Risk communication plans"],
         "answer": "Risk assessment",
         "explanation": "Risk assessment is a core part of any risk management framework."
       },
       {
         "question": "Which of the following is a key component of a business continuity plan (BCP)?",
-        "options": ["Disaster recovery procedures", "Marketing strategy", "Sales targets", "Product development"],
+        "options": ["Disaster recovery procedures", "Critical function identification", "Recovery time objectives", "Communication plans"],
         "answer": "Disaster recovery procedures",
         "explanation": "A BCP includes disaster recovery procedures to ensure critical operations can continue during a disruption."
       },
       {
         "question": "What is the main purpose of a security awareness training program?",
-        "options": ["To educate employees about security risks and best practices", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To educate employees about security risks and best practices", "To reduce the likelihood of successful attacks", "To improve compliance with policies", "To foster a security-conscious culture"],
         "answer": "To educate employees about security risks and best practices",
         "explanation": "Security awareness training helps employees recognize and respond to security threats."
       },
@@ -599,13 +599,13 @@
       },
       {
         "question": "What is the primary purpose of a security audit?",
-        "options": ["To evaluate the effectiveness of security controls", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To evaluate the effectiveness of security controls", "To identify gaps in security measures", "To verify compliance with standards", "To recommend improvements to policies"],
         "answer": "To evaluate the effectiveness of security controls",
         "explanation": "Security audits assess how well security controls are working."
       },
       {
         "question": "What is the main purpose of a security steering committee?",
-        "options": ["To provide strategic direction for the security program", "To increase profits", "To reduce staff", "To encrypt all data"],
+        "options": ["To provide strategic direction for the security program", "To prioritize security initiatives", "To allocate resources for security projects", "To review security policies"],
         "answer": "To provide strategic direction for the security program",
         "explanation": "A security steering committee sets the direction and priorities for security initiatives."
       }
