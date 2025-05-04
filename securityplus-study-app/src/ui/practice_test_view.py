@@ -85,7 +85,9 @@ class PracticeTestView(ctk.CTkFrame):
         self.progress_bar = ctk.CTkProgressBar(self, width=600)
         self.progress_bar.pack(pady=5)
         self.progress_label = ctk.CTkLabel(self, text="")
-        self.progress_label.pack(pady=(0, 15))
+        self.progress_label.pack(pady=(0, 0))
+        self.passed_label = ctk.CTkLabel(self, text="")
+        self.passed_label.pack(pady=(0, 15))
         self.update_progress_bar()
 
     def load_question(self):
@@ -118,6 +120,8 @@ class PracticeTestView(ctk.CTkFrame):
         answered = min(self.current_question_index + 1, total)
         self.progress_bar.set(answered / total)
         self.progress_label.configure(text=f"{answered} / {total} answered")
+        passed_count = len(self.passed_questions)
+        self.passed_label.configure(text=f"{passed_count} passed question{'s' if passed_count != 1 else ''} to revisit")
 
     def submit_answer(self):
         selected_answer = self.selected_option.get()
@@ -126,6 +130,9 @@ class PracticeTestView(ctk.CTkFrame):
                 self.user_answers.append(selected_answer)
             else:
                 self.user_answers[self.current_question_index] = selected_answer
+            # Remove from passed_questions if it was passed before
+            if self.current_question_index in self.passed_questions:
+                self.passed_questions.remove(self.current_question_index)
             self.next_question()
         else:
             self.show_warning("Warning", "Please select an answer.")
@@ -133,7 +140,15 @@ class PracticeTestView(ctk.CTkFrame):
     def pass_question(self):
         if self.current_question_index not in self.passed_questions:
             self.passed_questions.append(self.current_question_index)
-        self.next_question()
+        self.next_passed_question()
+
+    def next_passed_question(self):
+        # Go to the next passed question in the queue, or next unanswered if none
+        if self.passed_questions:
+            self.current_question_index = self.passed_questions[0]
+            self.load_question()
+        else:
+            self.next_question()
 
     def back_question(self):
         if self.current_question_index > 0:
