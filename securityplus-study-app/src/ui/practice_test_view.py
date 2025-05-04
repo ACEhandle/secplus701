@@ -57,7 +57,7 @@ class PracticeTestView(ctk.CTkFrame):
         else:
             self.questions = self.practice_tests.load_full_exam()
         if not self.questions:
-            ctk.CTkMessagebox.show_error("Error", "No questions found for this selection.")
+            self.show_error("Error", "No questions found for this selection.")
             self.setup_selection_screen()
             return
         self.setup_test_ui()
@@ -92,7 +92,7 @@ class PracticeTestView(ctk.CTkFrame):
             for answer in options:
                 self.answer_listbox.insert("end", answer + "\n")
         else:
-            ctk.CTkMessagebox.show_info("Info", "No more questions available.")
+            self.show_info("Info", "No more questions available.")
 
     def submit_answer(self):
         selected_answer = self.answer_listbox.get("1.0", "end").strip()
@@ -103,7 +103,7 @@ class PracticeTestView(ctk.CTkFrame):
                 self.user_answers[self.current_question_index] = selected_answer
             self.next_question()
         else:
-            ctk.CTkMessagebox.show_warning("Warning", "Please select an answer.")
+            self.show_warning("Warning", "Please select an answer.")
 
     def pass_question(self):
         if self.current_question_index not in self.passed_questions:
@@ -120,14 +120,14 @@ class PracticeTestView(ctk.CTkFrame):
             self.current_question_index = self.passed_questions[0]
             self.load_question()
         else:
-            ctk.CTkMessagebox.show_info("Info", "No passed questions to review.")
+            self.show_info("Info", "No passed questions to review.")
 
     def next_question(self):
         if self.current_question_index < len(self.questions) - 1:
             self.current_question_index += 1
             self.load_question()
         else:
-            ctk.CTkMessagebox.show_info("Info", "This is the last question.")
+            self.show_info("Info", "This is the last question.")
 
     def view_results(self):
         results = self.practice_tests.evaluate_answers(self.user_answers)
@@ -141,10 +141,34 @@ class PracticeTestView(ctk.CTkFrame):
         ctk.CTkLabel(result_win, text=f"Score: {results['correct']} / {results['total']}", font=("Helvetica", 14)).pack(pady=10)
         for detail in results['details']:
             if not detail['is_correct']:
-                ctk.CTkLabel(result_win, text=f"Q: {detail['question']}", fg_color="#ff6666", wraplength=500, justify='left').pack(anchor='w', padx=10)
-                ctk.CTkLabel(result_win, text=f"Your answer: {detail['user_answer']}", fg_color="#ffcc00", wraplength=500, justify='left').pack(anchor='w', padx=20)
-                ctk.CTkLabel(result_win, text=f"Correct answer: {detail['correct_answer']}", fg_color="#66ff66", wraplength=500, justify='left').pack(anchor='w', padx=20)
+                ctk.CTkLabel(result_win, text=f"Q: {detail['question']}", text_color="#ff6666", wraplength=500, justify='left').pack(anchor='w', padx=10)
+                ctk.CTkLabel(result_win, text=f"Your answer: {detail['user_answer']}", text_color="#ffcc00", wraplength=500, justify='left').pack(anchor='w', padx=20)
+                ctk.CTkLabel(result_win, text=f"Correct answer: {detail['correct_answer']}", text_color="#66ff66", wraplength=500, justify='left').pack(anchor='w', padx=20)
                 ctk.CTkLabel(result_win, text=f"Explanation: {detail['explanation']}", wraplength=500, justify='left').pack(anchor='w', padx=20, pady=(0,10))
         if all(d['is_correct'] for d in results['details']):
-            ctk.CTkLabel(result_win, text="All answers correct!", fg_color="#66ff66").pack(pady=10)
+            ctk.CTkLabel(result_win, text="All answers correct!", text_color="#66ff66").pack(pady=10)
         ctk.CTkButton(result_win, text="Close", command=result_win.destroy).pack(pady=10)
+
+    def show_info(self, title, message):
+        info_win = ctk.CTkToplevel(self.master)
+        info_win.title(title)
+        info_win.transient(self.master)
+        info_win.grab_set()
+        ctk.CTkLabel(info_win, text=message, wraplength=400).pack(padx=20, pady=20)
+        ctk.CTkButton(info_win, text="OK", command=info_win.destroy).pack(pady=10)
+
+    def show_warning(self, title, message):
+        warn_win = ctk.CTkToplevel(self.master)
+        warn_win.title(title)
+        warn_win.transient(self.master)
+        warn_win.grab_set()
+        ctk.CTkLabel(warn_win, text=message, wraplength=400, text_color="#ffcc00").pack(padx=20, pady=20)
+        ctk.CTkButton(warn_win, text="OK", command=warn_win.destroy).pack(pady=10)
+
+    def show_error(self, title, message):
+        err_win = ctk.CTkToplevel(self.master)
+        err_win.title(title)
+        err_win.transient(self.master)
+        err_win.grab_set()
+        ctk.CTkLabel(err_win, text=message, wraplength=400, text_color="#ff6666").pack(padx=20, pady=20)
+        ctk.CTkButton(err_win, text="OK", command=err_win.destroy).pack(pady=10)
