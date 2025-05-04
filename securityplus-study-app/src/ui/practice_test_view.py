@@ -117,7 +117,8 @@ class PracticeTestView(ctk.CTkFrame):
 
     def update_progress_bar(self):
         total = len(self.questions) if self.questions else 1
-        answered = min(self.current_question_index + 1, total)
+        # Only count questions that have a non-empty answer and are not in passed_questions
+        answered = sum(1 for i, ans in enumerate(self.user_answers) if ans and i not in self.passed_questions)
         self.progress_bar.set(answered / total)
         self.progress_label.configure(text=f"{answered} / {total} answered")
         passed_count = len(self.passed_questions)
