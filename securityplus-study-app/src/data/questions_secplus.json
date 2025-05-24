@@ -179,9 +179,9 @@
       },
       {
         "question": "Which of the following is an example of a blended threat?",
-        "options": ["A worm that installs a backdoor and spreads ransomware", "A phishing email with a malicious link", "A virus that disables antivirus software", "A trojan that exfiltrates data"],
+        "options": ["A worm that installs a backdoor and spreads ransomware", "Phishing", "Privilege escalation", "Keylogger"],
         "answer": "A worm that installs a backdoor and spreads ransomware",
-        "explanation": "Blended threats combine multiple attack methods, such as worms, backdoors, and ransomware."
+        "explanation": "Blended threats combine multiple attack methods, such as worms, backdoors, and ransomware. The other options are valid security terms but not blended threats."
       },
       {
         "question": "Which of the following is a common method used in privilege escalation attacks?",
@@ -191,15 +191,20 @@
       },
       {
         "question": "What is the main goal of a ransomware attack?",
-        "options": ["To extort money by encrypting data", "To disrupt operations", "To steal sensitive information", "To gain unauthorized access"],
+        "options": ["To extort money by encrypting data", "Data loss prevention", "Security policy", "Access control list (ACL)"],
         "answer": "To extort money by encrypting data",
-        "explanation": "Ransomware encrypts data and demands payment for decryption."
+        "explanation": "Ransomware encrypts data and demands payment for decryption. The other options are valid security terms but not goals of ransomware."
       },
       {
         "question": "Which of the following is a sign of a phishing attempt?",
-        "options": ["Urgent request for personal information", "Unusual sender address", "Suspicious attachments", "Generic greeting"],
+        "options": [
+          "Urgent request for personal information",
+          "Multi-factor authentication",
+          "Access control list (ACL)",
+          "Security policy"
+        ],
         "answer": "Urgent request for personal information",
-        "explanation": "Phishing emails often use urgency to trick users into revealing sensitive information."
+        "explanation": "Phishing emails often use urgency to trick users into revealing sensitive information. The other options are valid security terms but not signs of phishing."
       },
       {
         "question": "What is a common mitigation for brute force attacks?",

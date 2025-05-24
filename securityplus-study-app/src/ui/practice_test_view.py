@@ -125,15 +125,17 @@ class PracticeTestView(ctk.CTkFrame):
                     font=self.app_font
                 ).pack(anchor='w', pady=2)
             self.update_progress_bar()
-        else:
-            self.show_info("Info", "No more questions available.")
+        # If current_question_index >= len(self.questions), do nothing (no dialog, no UI change)
 
     def update_progress_bar(self):
         total = len(self.questions) if self.questions else 1
-        # Only count questions that have a non-empty answer and are not in passed_questions
-        answered = sum(1 for i, ans in enumerate(self.user_answers) if ans and i not in self.passed_questions)
-        self.progress_bar.set(answered / total)
-        self.progress_label.configure(text=f"{answered} / {total} answered")
+        # Count as 'completed' any question that is either answered or in passed_questions
+        completed = sum(
+            1 for i in range(total)
+            if (i < len(self.user_answers) and self.user_answers[i]) or i in self.passed_questions
+        )
+        self.progress_bar.set(completed / total)
+        self.progress_label.configure(text=f"{completed} / {total} completed")
         passed_count = len(self.passed_questions)
         self.passed_label.configure(text=f"{passed_count} passed question{'s' if passed_count != 1 else ''} to revisit")
 
@@ -193,13 +195,13 @@ class PracticeTestView(ctk.CTkFrame):
                 self.load_question()
             else:
                 self.in_review_passed_mode = False
-                self.show_info("Info", "Finished reviewing passed questions. Returning to main test.")
+                # Do not show info dialog, just stay on last passed question
         else:
             if self.current_question_index < len(self.questions) - 1:
                 self.current_question_index += 1
                 self.load_question()
-            else:
-                self.show_info("Info", "This is the last question.")
+            # If already at last question, do nothing (stay on last question, no dialog)
+            # Do not show info dialog, just remain on last question
 
     def view_results(self):
         results = self.practice_tests.evaluate_answers(self.user_answers)
