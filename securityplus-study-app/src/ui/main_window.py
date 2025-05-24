@@ -14,7 +14,7 @@ class MainWindow:
         master.geometry("800x600")
         self.current_view = None
 
-        self.label = ctk.CTkLabel(master, text="Welcome to the Security Plus Study App")
+        self.label = ctk.CTkLabel(master, text="Security+ Study App")
         self.label.pack(pady=10)
 
         self.practice_test_button = ctk.CTkButton(master, text="Practice Tests", command=self.open_practice_tests)
