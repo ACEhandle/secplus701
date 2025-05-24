@@ -149,6 +149,7 @@ class PracticeTestView(ctk.CTkFrame):
             # Remove from passed_questions if it was passed before
             if self.current_question_index in self.passed_questions:
                 self.passed_questions.remove(self.current_question_index)
+            self.update_progress_bar()  # Ensure progress bar updates immediately
             self.next_question()
         else:
             self.show_warning("Warning", "Please select an answer.")
