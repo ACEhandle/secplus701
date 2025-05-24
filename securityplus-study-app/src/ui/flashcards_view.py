@@ -6,9 +6,10 @@ import customtkinter as ctk
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 class FlashcardsView(ctk.CTkFrame):
-    def __init__(self, master=None):
+    def __init__(self, master=None, app_font=None):
         super().__init__(master)
         self.master = master
+        self.app_font = app_font or ctk.CTkFont(size=16)
         self.pack(fill='both', expand=True)
         self.terms = self.load_terms()
         self.current_index = None
@@ -24,11 +25,11 @@ class FlashcardsView(ctk.CTkFrame):
     def create_widgets(self):
         self.term_label = ctk.CTkLabel(self, text="", font=ctk.CTkFont(size=20, weight="bold"), wraplength=600)
         self.term_label.pack(pady=40)
-        self.definition_label = ctk.CTkLabel(self, text="", font=ctk.CTkFont(size=14), wraplength=600)
+        self.definition_label = ctk.CTkLabel(self, text="", font=self.app_font, wraplength=600)
         self.definition_label.pack(pady=20)
-        self.show_button = ctk.CTkButton(self, text="Show Definition", command=self.show_definition)
+        self.show_button = ctk.CTkButton(self, text="Show Definition", command=self.show_definition, font=self.app_font)
         self.show_button.pack(pady=10)
-        self.next_button = ctk.CTkButton(self, text="Next", command=self.next_card)
+        self.next_button = ctk.CTkButton(self, text="Next", command=self.next_card, font=self.app_font)
         self.next_button.pack(pady=10)
 
     def next_card(self):

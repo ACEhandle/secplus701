@@ -5,9 +5,10 @@ from modules.practice_tests import PracticeTests
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 class PracticeTestView(ctk.CTkFrame):
-    def __init__(self, master):
+    def __init__(self, master, app_font=None):
         super().__init__(master)
         self.master = master
+        self.app_font = app_font or ctk.CTkFont(size=16)
         questions_path = os.path.join(DATA_DIR, "questions_secplus.json")
         self.practice_tests = PracticeTests(questions_path)
         self.current_question_index = 0
@@ -24,12 +25,12 @@ class PracticeTestView(ctk.CTkFrame):
     def setup_selection_screen(self):
         for widget in self.winfo_children():
             widget.destroy()
-        ctk.CTkLabel(self, text="Select Practice Test Type").pack(pady=10)
+        ctk.CTkLabel(self, text="Select Practice Test Type", font=self.app_font).pack(pady=10)
         self.test_type.set("Module")
-        ctk.CTkOptionMenu(self, variable=self.test_type, values=["Module", "Full Exam"]).pack(pady=5)
+        ctk.CTkOptionMenu(self, variable=self.test_type, values=["Module", "Full Exam"], font=self.app_font).pack(pady=5)
         self.option_menu = None
         self.update_selection_options()
-        ctk.CTkButton(self, text="Start Test", command=self.start_test).pack(pady=10)
+        ctk.CTkButton(self, text="Start Test", command=self.start_test, font=self.app_font).pack(pady=10)
         self.test_type.trace('w', lambda *args: self.update_selection_options())
 
     def update_selection_options(self):
@@ -39,7 +40,7 @@ class PracticeTestView(ctk.CTkFrame):
             options = self.practice_tests.get_available_modules()
             if options:
                 self.selection_var.set(options[0])
-                self.option_menu = ctk.CTkOptionMenu(self, variable=self.selection_var, values=options)
+                self.option_menu = ctk.CTkOptionMenu(self, variable=self.selection_var, values=options, font=self.app_font)
                 self.option_menu.pack(pady=5)
             else:
                 self.selection_var.set("")
@@ -75,30 +76,30 @@ class PracticeTestView(ctk.CTkFrame):
         self.load_question()
 
     def setup_test_ui(self):
-        self.question_label = ctk.CTkLabel(self, text="", wraplength=700)
-        self.question_label.pack(pady=(10, 5))  # Reduce vertical padding
+        self.question_label = ctk.CTkLabel(self, text="", wraplength=700, font=self.app_font)
+        self.question_label.pack(pady=(10, 5))
         # Frame for answer options
         self.options_frame = ctk.CTkFrame(self)
-        self.options_frame.pack(pady=(0, 5), fill='x', padx=20)  # Reduce vertical padding
+        self.options_frame.pack(pady=(0, 5), fill='x', padx=20)
         self.selected_option = ctk.StringVar()
         button_frame = ctk.CTkFrame(self)
-        button_frame.pack(pady=(0, 5))  # Reduce vertical padding
-        self.submit_button = ctk.CTkButton(button_frame, text="Submit Answer", command=self.submit_answer)
+        button_frame.pack(pady=(0, 5))
+        self.submit_button = ctk.CTkButton(button_frame, text="Submit Answer", command=self.submit_answer, font=self.app_font)
         self.submit_button.pack(side="left", padx=5)
-        self.pass_button = ctk.CTkButton(button_frame, text="Pass", command=self.pass_question)
+        self.pass_button = ctk.CTkButton(button_frame, text="Pass", command=self.pass_question, font=self.app_font)
         self.pass_button.pack(side="left", padx=5)
-        self.back_button = ctk.CTkButton(button_frame, text="Back", command=self.back_question)
+        self.back_button = ctk.CTkButton(button_frame, text="Back", command=self.back_question, font=self.app_font)
         self.back_button.pack(side="left", padx=5)
-        self.review_passed_button = ctk.CTkButton(button_frame, text="Review Passed", command=self.review_passed_questions)
+        self.review_passed_button = ctk.CTkButton(button_frame, text="Review Passed", command=self.review_passed_questions, font=self.app_font)
         self.review_passed_button.pack(side="left", padx=5)
-        self.result_button = ctk.CTkButton(button_frame, text="View Results", command=self.view_results)
+        self.result_button = ctk.CTkButton(button_frame, text="View Results", command=self.view_results, font=self.app_font)
         self.result_button.pack(side="left", padx=5)
         self.progress_bar = ctk.CTkProgressBar(self, width=600)
-        self.progress_bar.pack(pady=(0, 2))  # Reduce vertical padding
-        self.progress_label = ctk.CTkLabel(self, text="")
+        self.progress_bar.pack(pady=(0, 2))
+        self.progress_label = ctk.CTkLabel(self, text="", font=self.app_font)
         self.progress_label.pack(pady=(0, 0))
-        self.passed_label = ctk.CTkLabel(self, text="")
-        self.passed_label.pack(pady=(0, 10))  # Reduce vertical padding
+        self.passed_label = ctk.CTkLabel(self, text="", font=self.app_font)
+        self.passed_label.pack(pady=(0, 10))
         self.update_progress_bar()
 
     def load_question(self):
@@ -120,7 +121,8 @@ class PracticeTestView(ctk.CTkFrame):
                     self.options_frame,
                     text=f"{abcd[idx]}. {answer}",
                     variable=self.selected_option,
-                    value=answer
+                    value=answer,
+                    font=self.app_font
                 ).pack(anchor='w', pady=2)
             self.update_progress_bar()
         else:
@@ -211,34 +213,34 @@ class PracticeTestView(ctk.CTkFrame):
         ctk.CTkLabel(result_win, text=f"Score: {results['correct']} / {results['total']}", font=("Helvetica", 14)).pack(pady=10)
         for detail in results['details']:
             if not detail['is_correct']:
-                ctk.CTkLabel(result_win, text=f"Q: {detail['question']}", text_color="#ff6666", wraplength=500, justify='left').pack(anchor='w', padx=10)
-                ctk.CTkLabel(result_win, text=f"Your answer: {detail['user_answer']}", text_color="#ffcc00", wraplength=500, justify='left').pack(anchor='w', padx=20)
-                ctk.CTkLabel(result_win, text=f"Correct answer: {detail['correct_answer']}", text_color="#66ff66", wraplength=500, justify='left').pack(anchor='w', padx=20)
-                ctk.CTkLabel(result_win, text=f"Explanation: {detail['explanation']}", wraplength=500, justify='left').pack(anchor='w', padx=20, pady=(0,10))
+                ctk.CTkLabel(result_win, text=f"Q: {detail['question']}", text_color="#ff6666", wraplength=500, justify='left', font=self.app_font).pack(anchor='w', padx=10)
+                ctk.CTkLabel(result_win, text=f"Your answer: {detail['user_answer']}", text_color="#ffcc00", wraplength=500, justify='left', font=self.app_font).pack(anchor='w', padx=20)
+                ctk.CTkLabel(result_win, text=f"Correct answer: {detail['correct_answer']}", text_color="#66ff66", wraplength=500, justify='left', font=self.app_font).pack(anchor='w', padx=20)
+                ctk.CTkLabel(result_win, text=f"Explanation: {detail['explanation']}", wraplength=500, justify='left', font=self.app_font).pack(anchor='w', padx=20, pady=(0,10))
         if all(d['is_correct'] for d in results['details']):
-            ctk.CTkLabel(result_win, text="All answers correct!", text_color="#66ff66").pack(pady=10)
-        ctk.CTkButton(result_win, text="Close", command=result_win.destroy).pack(pady=10)
+            ctk.CTkLabel(result_win, text="All answers correct!", text_color="#66ff66", font=self.app_font).pack(pady=10)
+        ctk.CTkButton(result_win, text="Close", command=result_win.destroy, font=self.app_font).pack(pady=10)
 
     def show_info(self, title, message):
         info_win = ctk.CTkToplevel(self.master)
         info_win.title(title)
         info_win.transient(self.master)
         info_win.grab_set()
-        ctk.CTkLabel(info_win, text=message, wraplength=400).pack(padx=20, pady=20)
-        ctk.CTkButton(info_win, text="OK", command=info_win.destroy).pack(pady=10)
+        ctk.CTkLabel(info_win, text=message, wraplength=400, font=self.app_font).pack(padx=20, pady=20)
+        ctk.CTkButton(info_win, text="OK", command=info_win.destroy, font=self.app_font).pack(pady=10)
 
     def show_warning(self, title, message):
         warn_win = ctk.CTkToplevel(self.master)
         warn_win.title(title)
         warn_win.transient(self.master)
         warn_win.grab_set()
-        ctk.CTkLabel(warn_win, text=message, wraplength=400, text_color="#ffcc00").pack(padx=20, pady=20)
-        ctk.CTkButton(warn_win, text="OK", command=warn_win.destroy).pack(pady=10)
+        ctk.CTkLabel(warn_win, text=message, wraplength=400, text_color="#ffcc00", font=self.app_font).pack(padx=20, pady=20)
+        ctk.CTkButton(warn_win, text="OK", command=warn_win.destroy, font=self.app_font).pack(pady=10)
 
     def show_error(self, title, message):
         err_win = ctk.CTkToplevel(self.master)
         err_win.title(title)
         err_win.transient(self.master)
         err_win.grab_set()
-        ctk.CTkLabel(err_win, text=message, wraplength=400, text_color="#ff6666").pack(padx=20, pady=20)
-        ctk.CTkButton(err_win, text="OK", command=err_win.destroy).pack(pady=10)
+        ctk.CTkLabel(err_win, text=message, wraplength=400, text_color="#ff6666", font=self.app_font).pack(padx=20, pady=20)
+        ctk.CTkButton(err_win, text="OK", command=err_win.destroy, font=self.app_font).pack(pady=10)

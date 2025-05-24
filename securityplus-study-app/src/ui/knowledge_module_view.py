@@ -5,17 +5,18 @@ import os
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 class KnowledgeModuleView(ctk.CTkFrame):
-    def __init__(self, master=None):
+    def __init__(self, master=None, app_font=None):
         super().__init__(master)
         self.master = master
+        self.app_font = app_font or ctk.CTkFont(size=16)
         self.create_widgets()
         self.load_knowledge_modules()
 
     def create_widgets(self):
-        self.title_label = ctk.CTkLabel(self, text="Knowledge Module")
+        self.title_label = ctk.CTkLabel(self, text="Knowledge Module", font=self.app_font)
         self.title_label.pack(pady=10)
 
-        self.text_area = ctk.CTkTextbox(self, wrap='word', width=700, height=400)
+        self.text_area = ctk.CTkTextbox(self, wrap='word', width=700, height=400, font=self.app_font)
         self.text_area.pack(expand=True, fill='both')
 
     def load_knowledge_modules(self):

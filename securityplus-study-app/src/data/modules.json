@@ -1,0 +1,29 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "General Security Concepts",
+      "description": "Covers foundational security principles, terminology, and best practices. (12%)"
+    },
+    {
+      "id": 2,
+      "title": "Threats, Vulnerabilities, and Mitigations",
+      "description": "Focuses on identifying, analyzing, and mitigating threats and vulnerabilities. (22%)"
+    },
+    {
+      "id": 3,
+      "title": "Security Architecture",
+      "description": "Covers secure network and system design, implementation, and architecture. (18%)"
+    },
+    {
+      "id": 4,
+      "title": "Security Operations",
+      "description": "Covers day-to-day security operations, monitoring, incident response, and forensics. (28%)"
+    },
+    {
+      "id": 5,
+      "title": "Security Program Management and Oversight",
+      "description": "Covers risk management, compliance, governance, and security program oversight. (20%)"
+    }
+  ]
+}
