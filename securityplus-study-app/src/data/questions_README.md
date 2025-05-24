@@ -16,7 +16,7 @@ This document defines the requirements and best practices for authoring and revi
 - **No Double Negatives:** Avoid double negatives or confusing phrasing in questions and answers.
 - **No Overlapping Answers:** Do not use answers or distractors that overlap in meaning or could both be considered correct.
 - **No Certification-Specific Language:** Do not reference specific exam names, numbers, or organizations in the question/answer text unless absolutely necessary for context.
-- **Extensibility:** These rules apply to all practice test modules, not just Security+.
+- **Extensibility:** These rules apply to all practice test modules.
 
 ## Example (Acronym Rule)
 - **Bad:**
